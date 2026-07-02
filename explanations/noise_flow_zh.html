@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>噪声流场 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+</head>
+<body>
+<main class="explanation-shell">
+    <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+    <header>
+        <h1>噪声流场</h1>
+        <p class="subtitle">通过 Perlin 噪声实现的生成艺术</p>
+    </header>
+
+    <section>
+        <h2>基本概念</h2>
+        <p>流场（Flow Field）是一个向量网格，定义了空间中每个点的方向和大小。通过在场中放置粒子并让它们跟随这些向量运动，我们可以创造出有机的、类似流体的图案。</p>
+    </section>
+
+    <section>
+        <h2>数学原理</h2>
+        <p>此可视化的核心是 <strong>Perlin 噪声</strong>，这是由 Ken Perlin 开发的一种梯度噪声。与纯随机值不同，Perlin 噪声产生的是平滑、连续的伪随机序列。</p>
+        <div class="formula">
+            v(x, y) = (cos(α), sin(α))<br>
+            α = Noise(x, y) * 4π
+        </div>
+        <p>空间中任何点 <em>(x, y)</em> 的速度 <em>v</em> 是通过将该坐标处的噪声值映射到一个角度 α 来确定的。</p>
+    </section>
+</main>
+</body>
+</html>

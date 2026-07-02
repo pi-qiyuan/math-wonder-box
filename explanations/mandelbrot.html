@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mandelbrot Set - Math Wonder Box</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← Back to New Tab</a>
+      
+      <header>
+        <p class="eyebrow">Simple Mandelbrot Set</p>
+        <h1>Mandelbrot</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>What is the Mandelbrot Set?</h2>
+        <p>The Mandelbrot set is the set of complex numbers <code>c</code> for which the function <code>f(z) = z² + c</code> does not diverge when iterated from <code>z = 0</code>.</p>
+        
+        <div class="math-block">
+          z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + c
+        </div>
+
+        <h2>How is it rendered?</h2>
+        <p>For each pixel on your screen, we map it to a complex number <code>c</code>. We then repeat the calculation above. If the value stays small after many repetitions, the point is inside the set (usually colored black). If it grows to infinity, we color it based on how quickly it escaped.</p>
+        
+        <h2>Infinite Detail</h2>
+        <p>The most amazing property of the Mandelbrot set is its self-similarity. No matter how deep you zoom into the boundary, you will find infinitely complex and beautiful patterns, often containing miniature copies of the entire set itself.</p>
+      </section>
+    </main>
+  </body>
+</html>

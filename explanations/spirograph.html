@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spirograph - Math Wonder Box</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← Back to New Tab</a>
+      
+      <header>
+        <p class="eyebrow">Geometric Hypotrochoids</p>
+        <h1>Spirograph (Hypotrochoid)</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>What is a Hypotrochoid?</h2>
+        <p>A hypotrochoid is a plane curve traced by a point attached to a circle of radius <code>r</code> rolling around the <strong>inside</strong> of a fixed circle of radius <code>R</code>, where the point is at a distance <code>d</code> from the center of the interior circle.</p>
+        
+        <div class="math-block">
+          x(θ) = (R - r) cos(θ) + d cos((R - r)θ / r)<br>
+          y(θ) = (R - r) sin(θ) - d sin((R - r)θ / r)
+        </div>
+
+        <h2>Parameters & Shapes</h2>
+        <p>In these equations, <code>R</code> is the radius of the fixed outer circle, <code>r</code> is the radius of the rolling inner circle, and <code>d</code> is the distance of the tracing pen from the center of the rolling circle. Depending on the ratios of these numbers, you can create stars, flowers, or complex overlapping webs.</p>
+        
+        <h2>Classic Spirograph Art</h2>
+        <p>The term "Spirograph" is a trademark for a geometric drawing toy that produces these mathematical curves. The internal gears of the toy create hypotrochoids, while the external gears create epitrochoids. These patterns are a beautiful demonstration of how simple circular motion can generate infinite complexity.</p>
+      </section>
+    </main>
+  </body>
+</html>

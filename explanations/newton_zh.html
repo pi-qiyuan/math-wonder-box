@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>牛顿分形 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">求根迭代</p>
+        <h1>牛顿分形</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是牛顿分形？</h2>
+        <p>牛顿分形是复平面上的一种边界集，它是通过对特定多项式 <code>p(z)</code> 应用牛顿迭代法而生成的。</p>
+        
+        <div class="math-block">
+          z<sub>n+1</sub> = z<sub>n</sub> - f(z<sub>n</sub>) / f'(z<sub>n</sub>)
+        </div>
+
+        <h2>它是如何渲染的？</h2>
+        <p>牛顿法通常用于寻找方程的根。在这个分形中，我们从复平面上的某一点 <code>z</code> 开始迭代，观察它最终收敛到哪个根。每一个根都被分配了一种独特的颜色。</p>
+        
+        <h2>简单中的复杂</h2>
+        <p>虽然迭代规则非常简单，但不同根的收敛区域之间的边界却异常复杂且具有分形特征。这些边界是迭代方法在选择收敛到哪个根时“犹豫不决”的地方。</p>
+      </section>
+    </main>
+  </body>
+</html>

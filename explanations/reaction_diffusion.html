@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reaction-Diffusion System - Math Wonder Box</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← Back to New Tab</a>
+      
+      <header>
+        <p class="eyebrow">Natural Pattern Formation</p>
+        <h1>Reaction-Diffusion System</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>What is a Reaction-Diffusion System?</h2>
+        <p>A Reaction-Diffusion system is a mathematical model that explains how complex patterns in nature—like zebra stripes, leopard spots, or coral structures—can emerge from the interaction of simple chemical substances.</p>
+        
+        <h2>The Gray-Scott Model</h2>
+        <p>This simulation uses the <strong>Gray-Scott model</strong>, which involves two virtual chemicals, A and B. Chemical A is continuously added to the system, while B is consumed in a reaction that creates more of itself (autocatalysis) and then slowly drains away. The resulting patterns depend on the rates of feeding (F) and killing (K).</p>
+        
+        <div class="math-block">
+          ∂a/∂t = Da∇²a - ab² + F(1-a)<br>
+          ∂b/∂t = Db∇²b + ab² - (K+F)b
+        </div>
+
+        <h2>Turing's Legacy</h2>
+        <p>In 1952, the legendary polymath <strong>Alan Turing</strong> proposed that these systems could be the basis for morphogenesis—the biological process that causes an organism to develop its shape. He proved that a stable uniform state could become unstable and form periodic patterns through the simple combination of diffusion and reaction.</p>
+
+        <h2>Computational Art</h2>
+        <p>Because these systems require thousands of calculations per pixel for every frame, they are a perfect showcase for GPU acceleration. The patterns you see are "alive"—they grow, divide, and compete for space in real-time, creating a mesmerizing bridge between mathematics and biology.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>毕达哥拉斯树 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">递归几何</p>
+        <h1>毕达哥拉斯树 (Pythagoras Tree)</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是毕达哥拉斯树？</h2>
+        <p>毕达哥拉斯树是一种由正方形构成的平面分形。它以古希腊数学家毕达哥拉斯的名字命名，因为每三个相接触的正方形都围成一个直角三角形，生动地展示了<strong>勾股定理</strong>（毕达哥拉斯定理）。</p>
+        
+        <h2>生成原理</h2>
+        <p>构造从一个正方形开始。在该正方形的上方构造两个较小的正方形，使得这两个正方形的边与原始正方形的上边恰好构成一个直角三角形。随后，对这两个新生成的正方形重复同样的过程，无限递归。</p>
+        
+        <h2>数学特性</h2>
+        <ul>
+          <li><strong>对称性：</strong> 如果直角三角形是等腰直角三角形（45°-45°-90°），则生成的树是完美对称的。</li>
+          <li><strong>不对称美：</strong> 通过改变直角三角形的角度，树会发生倾斜或螺旋，产生类似于大自然中“风吹树动”的有机形态。</li>
+          <li><strong>有限的区域：</strong> 对于 45° 的对称树，整个结构会被包含在一个 6x4（以初始正方形边长为单位）的有限区域内。</li>
+        </ul>
+
+        <h2>有机复杂性</h2>
+        <p>尽管毕达哥拉斯树完全由规整的正方形和直角构成，但高阶迭代后的图形却惊人地类似于自然的树木、花椰菜或珊瑚。它展示了简单的几何规则如何模拟生物界中复杂的特征结构。</p>
+      </section>
+    </main>
+  </body>
+</html>

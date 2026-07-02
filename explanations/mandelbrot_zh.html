@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>曼德博集合 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">简易曼德博集合</p>
+        <h1>曼德博</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是曼德博集合？</h2>
+        <p>曼德博集合是指所有使得函数 <code>f(z) = z² + c</code> 从 <code>z = 0</code> 开始迭代时不发散的复数 <code>c</code> 的集合。</p>
+        
+        <div class="math-block">
+          z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + c
+        </div>
+
+        <h2>它是如何渲染的？</h2>
+        <p>对于屏幕上的每个像素，我们将其映射到一个复数 <code>c</code>。然后我们重复上述计算。如果经过多次重复后数值仍然较小，则该点在集合内部（通常着色为黑色）。如果它增长到无穷大，我们根据它逃逸的速度为其着色。</p>
+        
+        <h2>无限的细节</h2>
+        <p>曼德博集合最神奇的特性是它的自相似性。无论你向边界缩放多深，你都会发现无限复杂和美丽的图案，通常包含整个集合本身的微型副本。</p>
+      </section>
+    </main>
+  </body>
+</html>

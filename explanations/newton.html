@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Newton Fractal - Math Wonder Box</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← Back to New Tab</a>
+      
+      <header>
+        <p class="eyebrow">Root Finding Iteration</p>
+        <h1>Newton Fractal</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>What is a Newton Fractal?</h2>
+        <p>A Newton fractal is a boundary set in the complex plane characterized by Newton's method applied to a fixed polynomial <code>p(z)</code>.</p>
+        
+        <div class="math-block">
+          z<sub>n+1</sub> = z<sub>n</sub> - f(z<sub>n</sub>) / f'(z<sub>n</sub>)
+        </div>
+
+        <h2>How is it rendered?</h2>
+        <p>Newton's method is used to find the roots of an equation. In this fractal, we start at a point <code>z</code> in the complex plane and see which root it converges to. Each root is assigned a unique color.</p>
+        
+        <h2>Complexity from Simplicity</h2>
+        <p>While the iteration rule is simple, the boundaries between the regions of convergence to different roots are incredibly complex and fractal. These boundaries are where the method is "undecided" about which root to go to.</p>
+      </section>
+    </main>
+  </body>
+</html>

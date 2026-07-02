@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>沃罗诺伊图 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">空间划分</p>
+        <h1>沃罗诺伊图 (Voronoi Diagram)</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是沃罗诺伊图？</h2>
+        <p>沃罗诺伊图（Voronoi Diagram）是对平面的一种划分。给定一组离散的点（称为种子点或生成点），对于平面上的任何一个位置，将其归属于离它最近的那个种子点。这样，每一个种子点都拥有一个对应的区域，这个区域内的所有点到该种子的距离都比到其他种子近。</p>
+
+        <h2>如何渲染？</h2>
+        <p>本插件使用 WebGL 技术并行计算每个像素到最近种子点的距离。不同的预设采用了不同的距离度量方式（如欧几里得距离或曼哈顿距离）以及不同的着色技术，从而生成有机或几何美感的图案。</p>
+        
+        <h2>自然界中的应用</h2>
+        <p>沃罗诺伊图案在自然界中随处可见：长颈鹿的斑纹、蜻蜓的翅膀脉络、蜂巢的结构，甚至是宇宙的大尺度结构，都遵循着类似的效率最大化空间划分原则。</p>
+      </section>
+    </main>
+  </body>
+</html>

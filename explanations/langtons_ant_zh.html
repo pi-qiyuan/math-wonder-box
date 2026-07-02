@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>兰顿蚂蚁 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">细胞自动机</p>
+        <h1>兰顿蚂蚁</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是兰顿蚂蚁？</h2>
+        <p>兰顿蚂蚁是一种二维通用图灵机，具有非常简单的规则集，但能表现出复杂的突现行为。它由克里斯·兰顿在1986年发明。</p>
+        
+        <h2>基本规则</h2>
+        <p>平面上的方格被着色。我们随意将一个方格标识为“蚂蚁”。蚂蚁在每一步都可以向四个基本方向中的任何一个移动。规则如下：</p>
+        <ul>
+          <li>在白色方格，向右旋转90°，翻转方格颜色，向前移动一个单位。</li>
+          <li>在黑色方格，向左旋转90°，翻转方格颜色，向前移动一个单位。</li>
+        </ul>
+
+        <h2>突现行为</h2>
+        <p>尽管规则非常简单，但蚂蚁的行为相当复杂：</p>
+        <ul>
+          <li><strong>简单阶段：</strong> 在最初的几百步中，它会创建非常简单的图案，通常是对称的。</li>
+          <li><strong>混乱阶段：</strong> 几百步后，会出现一个由黑白方格组成的大型不规则图案。蚂蚁会追踪一条伪随机路径，直到大约10,000步左右。</li>
+          <li><strong>秩序阶段：</strong> 最后，蚂蚁开始构建一个每104步重复一次的“高速公路”图案。</li>
+        </ul>
+        
+        <h2>推广版本</h2>
+        <p>你在这里看到的版本支持多种颜色和规则。每种颜色都有对应的“左转(L)”或“右转(R)”规则。这导致了更加多样和美丽的图案！</p>
+      </section>
+    </main>
+  </body>
+</html>

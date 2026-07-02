@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Math Wonder Box</title>
+    <link rel="stylesheet" href="css/newtab.css">
+  </head>
+  <body>
+    <main class="newtab-shell">
+      <section class="links-pane" aria-labelledby="links-title">
+        <header class="brand-bar">
+          <div>
+            <p class="eyebrow" data-i18n="extension_name">Math Wonder Box</p>
+            <h1 id="links-title" data-i18n="newtab_title">New Tab</h1>
+          </div>
+          <div class="header-actions">
+            <time class="clock" id="clock" aria-live="polite"></time>
+            <button class="ghost-button" id="toggleTheme" type="button">Theme</button>
+            <button class="ghost-button" id="useChromeNewTab" type="button" data-i18n="newtab_button_chrome">Chrome New Tab</button>
+          </div>
+        </header>
+
+        <div class="search-wrap" role="search">
+          <input id="searchBox" type="search" placeholder="Search or enter an address" data-i18n="newtab_search_placeholder" autocomplete="off">
+        </div>
+
+        <section class="top-sites-section" aria-labelledby="top-sites-title">
+          <div class="section-heading">
+            <h2 id="top-sites-title" data-i18n="newtab_top_sites_title">Frequent Links</h2>
+            <span id="siteCount" class="muted"></span>
+          </div>
+          <div id="topSites" class="top-sites" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section class="mandelbrot-pane" aria-labelledby="links-title">
+        <div class="canvas-frame">
+          <div class="fractal-formula" id="fractalFormula" aria-hidden="true"></div>
+          <canvas id="mandelbrotCanvas" width="900" height="900" aria-label="Mandelbrot set visualization"></canvas>
+          <canvas id="webglCanvas" width="900" height="900" aria-label="WebGL fractal visualization" style="display: none;"></canvas>
+          <div class="fractal-toolbar" id="fractalToolbar">
+            <div class="title-group">
+              <div class="eyebrow-row">
+                <p class="eyebrow" id="fractal-eyebrow"></p>
+                <div class="eyebrow-actions">
+                  <button id="viewExplanation" type="button" data-i18n="fractal_info" style="display: none;"></button>
+                  <button id="switchFractal" type="button" data-i18n="fractal_switch"></button>
+                </div>
+              </div>
+              <div class="title-row">
+                <h2 id="fractal-title"></h2>
+                <button id="saveImage" type="button" data-i18n="fractal_save"></button>
+              </div>
+            </div>
+            <div class="fractal-actions">
+              <button id="zoomIn" type="button" aria-label="Zoom In">+</button>
+              <button id="zoomOut" type="button" aria-label="Zoom Out">-</button>
+              <button id="resetView" type="button" data-i18n="mandelbrot_reset"></button>
+              <button id="nextParams" type="button" data-i18n="fractal_next"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="newtab-footer">
+        <a href="https://ko-fi.com/qiyuanyang" target="_blank" data-i18n="footer_buy_coffee">Buy me a coffee</a>
+        <span class="divider">/</span>
+        <a href="https://hugbear.ai/privacy.html" target="_blank" data-i18n="footer_privacy_policy">Privacy Policy</a>
+      </footer>
+    </main>
+
+    <dialog class="mode-dialog" id="chromeModeDialog">
+      <form method="dialog" class="mode-dialog-panel">
+        <p class="eyebrow" data-i18n="dialog_switch_title">Switch New Tab</p>
+        <h2 data-i18n="dialog_switch_question">Use Chrome's built-in new tab?</h2>
+        <p class="dialog-copy" data-i18n="dialog_switch_copy">After switching, you can return to Math Wonder Box from this extension's popup.</p>
+        <div class="dialog-actions">
+          <button class="ghost-button" value="cancel" type="submit" data-i18n="dialog_cancel">Cancel</button>
+          <button class="primary-button" id="confirmChromeNewTab" value="confirm" type="button" data-i18n="dialog_confirm">Use Chrome New Tab</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="js/utils.js"></script>
+    <script src="js/fractals/mandelbrot.js"></script>
+    <script src="js/fractals/clifford.js"></script>
+    <script src="js/fractals/newton.js"></script>
+    <script src="js/fractals/barnsley_fern.js"></script>
+    <script src="js/fractals/phyllotaxis.js"></script>
+    <script src="js/fractals/fibonacci_spiral.js"></script>
+    <script src="js/fractals/fibonacci_tree.js"></script>
+    <script src="js/fractals/lissajous.js"></script>
+    <script src="js/fractals/rose.js"></script>
+    <script src="js/fractals/epicycloid.js"></script>
+    <script src="js/fractals/spirograph.js"></script>
+    <script src="js/fractals/dragon_curve.js"></script>
+    <script src="js/fractals/hilbert_curve.js"></script>
+    <script src="js/fractals/sierpinski_carpet.js"></script>
+    <script src="js/fractals/sierpinski_triangle.js"></script>
+    <script src="js/fractals/bifurcation.js"></script>
+    <script src="js/fractals/double_pendulum.js"></script>
+    <script src="js/fractals/julia.js"></script>
+    <script src="js/fractals/lorenz.js"></script>
+    <script src="js/fractals/aizawa.js"></script>
+    <script src="js/fractals/hopalong.js"></script>
+    <script src="js/fractals/langtons_ant.js"></script>
+    <script src="js/fractals/apollonian_gasket.js"></script>
+    <script src="js/fractals/noise_flow.js"></script>
+    <script src="js/fractals/penrose_tiling.js"></script>
+    <script src="js/fractals/chladni_figure.js"></script>
+    <script src="js/fractals/voronoi.js"></script>
+    <script src="js/fractals/koch_snowflake.js"></script>
+    <script src="js/fractals/pythagoras_tree.js"></script>
+    <script src="js/fractals/levy_curve.js"></script>
+    <script src="js/fractals/reaction_diffusion.js"></script>
+    <script src="js/newtab.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分岔图 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">混沌理论</p>
+        <h1>分岔图 (Bifurcation Diagram)</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是分岔图？</h2>
+        <p>分岔图展示了一个动力系统的稳定状态如何随着系统参数的变化而演变。最著名的例子是基于<strong>逻辑映射</strong>（Logistic Map）的图像，这是一个描述生物种群增长的简单数学模型。</p>
+        
+        <div class="math-block">
+          x[n+1] = r · x[n](1 - x[n])
+        </div>
+
+        <h2>通往混沌之路</h2>
+        <p>在这个方程中，<code>x</code> 代表种群比例，<code>r</code> 是增长参数。随着我们增加 <code>r</code> 的值，系统的行为会发生剧烈变化：</p>
+        <ul>
+          <li><strong>稳定性：</strong> 当 <code>r</code> 较小时，种群最终会稳定在一个单一的数值。</li>
+          <li><strong>分岔：</strong> 到达某个临界点时，系统会“分裂”，开始在两个数值之间交替波动。这就是分岔。</li>
+          <li><strong>倍周期：</strong> 随着 <code>r</code> 进一步增加，系统会再次分裂成 4 个、8 个、16 个数值……这就是著名的“费根鲍姆级联”。</li>
+          <li><strong>混沌：</strong> 最终，系统进入混沌状态，数值不再重复，且对初始条件极其敏感。</li>
+        </ul>
+
+        <h2>庞加莱-曼内维尔窗口</h2>
+        <p>即使在混沌区域内，你也能看到一些细长的白色垂直带。这些是“秩序之窗”，系统在这些区域会短暂地恢复稳定，然后重新陷入混沌。这种分形结构在任何尺度下都会不断重复。</p>
+
+        <h2>科学意义</h2>
+        <p>分岔图证明了极其复杂和看似“随机”的行为，可以从非常简单的、确定性的规则中产生。它是现代非线性动力学和混沌理论的基石。</p>
+      </section>
+    </main>
+  </body>
+</html>

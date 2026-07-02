@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>谢尔宾斯基三角形 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">递归分形</p>
+        <h1>谢尔宾斯基三角形 (Sierpinski Triangle)</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是谢尔宾斯基三角形？</h2>
+        <p>谢尔宾斯基三角形（也称为谢尔宾斯基垫片或谢尔宾斯基筛）是由波兰数学家瓦茨瓦夫·谢尔宾斯基在 1915 年描述的一种分形图形。它是自相似集的经典范例，这意味着无论你将其放大多少倍，看到的图形结构都与整体完全一致。</p>
+        
+        <h2>生成原理</h2>
+        <p>构造过程从一个等边三角形开始。通过连接三边的中点，将三角形划分为四个更小的等边三角形，然后移除中间倒扣的那一个。对剩下的三个三角形重复这一过程，无限循环下去。</p>
+        
+        <h2>数学联系</h2>
+        <ul>
+          <li><strong>帕斯卡三角形：</strong> 如果你将帕斯卡三角形中的奇数涂上颜色，得到的图案正是谢尔宾斯基三角形。</li>
+          <li><strong>混沌游戏：</strong> 该图形也可以通过一个称为“混沌游戏”的随机过程生成：随机选择一个顶点，并将当前点移向该顶点的中点，不断重复。</li>
+          <li><strong>分形维数：</strong> 它的豪斯多夫维数约为 1.585（log 3 / log 2），这意味着它的复杂程度介于一维线段和二维平面之间。</li>
+        </ul>
+
+        <h2>无限的深度</h2>
+        <p>与谢尔宾斯基地毯类似，随着迭代次数趋于无穷，三角形的面积趋于零，而其总周长则变为无限。它是简单递归规则产生无限几何深度的最美妙证明之一。</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voronoi Diagram - Math Wonder Box</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← Back to New Tab</a>
+      
+      <header>
+        <p class="eyebrow">Spatial Partitioning</p>
+        <h1>Voronoi Diagram</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>What is a Voronoi Diagram?</h2>
+        <p>A Voronoi diagram is a partition of a plane into regions close to each of a given set of objects. In the simplest case, these objects are just a set of points (called seeds, sites, or generators).</p>
+        
+        <p>For each seed, there is a corresponding region, called a Voronoi cell, consisting of all points of the plane closer to that seed than to any other.</p>
+
+        <h2>How is it rendered?</h2>
+        <p>This visualization uses WebGL to efficiently calculate the distance to the nearest seed point for every pixel simultaneously. Different presets use different mathematical distance metrics (like Euclidean or Manhattan distance) and coloring techniques to create organic or geometric patterns.</p>
+        
+        <h2>Natural Patterns</h2>
+        <p>Voronoi patterns are everywhere in nature: the skin of a giraffe, the wings of a dragonfly, the honeycomb of bees, and even the large-scale structure of the universe.</p>
+      </section>
+    </main>
+  </body>
+</html>

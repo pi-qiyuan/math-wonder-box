@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>反应扩散系统 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">自然图样的形成</p>
+        <h1>反应扩散系统 (Reaction-Diffusion)</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是反应扩散系统？</h2>
+        <p>反应扩散系统是一个数学模型，解释了自然界中复杂的图样——如斑马纹、豹斑或珊瑚结构——是如何通过简单的化学物质相互作用而自发产生的。</p>
+        
+        <h2>Gray-Scott 模型</h2>
+        <p>本模拟采用著名的 <strong>Gray-Scott 模型</strong>。系统包含两种虚拟物质 A 和 B：A 被不断补充，而 B 在消耗 A 的同时进行自我复制（自催化），并随后缓慢衰减。图样的最终形态取决于“喂养率”(F) 和“杀伤率”(K) 的微小差异。</p>
+        
+        <div class="math-block">
+          ∂a/∂t = Da∇²a - ab² + F(1-a)<br>
+          ∂b/∂t = Db∇²b + ab² - (K+F)b
+        </div>
+
+        <h2>图灵的遗产</h2>
+        <p>1952 年，传奇全才<strong>艾伦·图灵</strong>提出，这类系统可能是生物形态发生（Morphogenesis）的基础——即生物体如何发育出特定的形状。他证明了仅仅通过扩散和反应的结合，一个稳定的均匀状态就能变得不稳定，并形成周期性的图样。</p>
+
+        <h2>计算艺术</h2>
+        <p>由于该系统每一帧都需要对每个像素进行数千次计算，它是 GPU 加速渲染的绝佳展示。你看到的图样是“活的”——它们在实时进行生长、分裂和竞争，构成了数学与生物学之间令人着迷的桥梁。</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Langton's Ant - Math Wonder Box</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← Back to New Tab</a>
+      
+      <header>
+        <p class="eyebrow">Cellular Automaton</p>
+        <h1>Langton's Ant</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>What is Langton's Ant?</h2>
+        <p>Langton's ant is a two-dimensional universal Turing machine with a very simple set of rules but complex emergent behavior. It was invented by Chris Langton in 1986.</p>
+        
+        <h2>The Rules</h2>
+        <p>Squares on a plane are colored various colors. We arbitrarily identify one square as the "ant". The ant can travel in any of the four cardinal directions at each step it takes. The rules are:</p>
+        <ul>
+          <li>At a white square, turn 90° right, flip the color of the square, move forward one unit.</li>
+          <li>At a black square, turn 90° left, flip the color of the square, move forward one unit.</li>
+        </ul>
+
+        <h2>Emergent Behavior</h2>
+        <p>Despite the simplicity of these rules, the ant's behavior is quite complex:</p>
+        <ul>
+          <li><strong>Simplicity:</strong> During the first few hundred steps it creates very simple patterns which are often symmetric.</li>
+          <li><strong>Chaos:</strong> After a few hundred steps, a big, irregular pattern of black and white squares appears. The ant traces a pseudo-random path until around 10,000 steps.</li>
+          <li><strong>Order:</strong> Finally the ant starts building a "highway" pattern that repeats every 104 steps.</li>
+        </ul>
+        
+        <h2>Generalization</h2>
+        <p>The version you see here can support multiple colors and rules. Each color has a corresponding "L" or "R" turn rule. This leads to even more diverse and beautiful patterns!</p>
+      </section>
+    </main>
+  </body>
+</html>

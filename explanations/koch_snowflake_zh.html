@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>科赫雪花 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+      
+      <header>
+        <p class="eyebrow">分形几何</p>
+        <h1>科赫雪花 (Koch Snowflake)</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是科赫雪花？</h2>
+        <p>科赫雪花是最早被描述的分形曲线之一，由瑞典数学家海里格·冯·科赫在 1904 年的一篇论文中提出。它是数学中一个著名的例子：一条连续但处处不可导的曲线。</p>
+        
+        <h2>生成原理</h2>
+        <p>科赫雪花的构造从一个等边三角形开始。在每一次迭代中，将现有的每一条线段等分为三段，在中间的一段上向外作一个新的等边三角形，并移除该段。这个过程无限重复下去。</p>
+        
+        <h2>数学悖论</h2>
+        <ul>
+          <li><strong>无限的周长：</strong> 随着迭代次数趋于无穷，雪花的周长在每一步都增加到原来的 4/3，最终变为无限。</li>
+          <li><strong>有限的面积：</strong> 尽管周长无限，但整个雪花都被包含在一个有限的圆内。其面积精确地等于原始三角形面积的 8/5。</li>
+        </ul>
+
+        <h2>逻辑之美</h2>
+        <p>科赫雪花抓住了分形几何的精髓：由简单、确定的规则生成复杂且具有有机感的结构。它极大地模拟了真实雪花的晶体结构，展示了大自然如何利用递归模式创造出既高效又美丽的形态。</p>
+      </section>
+    </main>
+  </body>
+</html>

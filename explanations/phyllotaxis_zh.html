@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斐波那契叶序 - 讲解</title>
+    <link rel="stylesheet" href="explanation.css">
+</head>
+<body>
+    <div class="explanation-shell">
+        <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+        <header>
+            <h1>斐波那契叶序</h1>
+            <p class="subtitle">自然设计的数学奥秘</p>
+        </header>
+
+        <section>
+            <h2>什么是叶序？</h2>
+            <p>叶序是指植物茎上叶片的排列方式，或者是向日葵中种子的排列模式。在许多植物中，这些图案遵循斐波那契数列和黄金角度（约 137.5 度）。</p>
+        </section>
+
+        <section>
+            <h2>数学原理</h2>
+            <p>这里使用的模型基于 Vogel 公式，该公式描述了每个种子 (n) 在极坐标 (r, θ) 中的位置：</p>
+            <div class="formula">
+                r = c √n<br>
+                θ = n × 137.508°
+            </div>
+            <p>其中：</p>
+            <ul>
+                <li><strong>n</strong> 是种子的索引号。</li>
+                <li><strong>r</strong> 是到中心的距离。</li>
+                <li><strong>θ</strong> 是相对于参考方向的角度。</li>
+                <li><strong>c</strong> 是常数缩放因子。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>为什么是黄金角度？</h2>
+            <p>黄金角度确保每个新种子都尽可能远离之前的种子，从而实现最有效的空间利用。如果角度稍有不同（例如精确到 137.5° 或 137.6°），随着图案的增长，最终会出现缝隙或直线。</p>
+        </section>
+    </div>
+</body>
+</html>
