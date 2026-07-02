@@ -108,6 +108,10 @@ The following is an introduction to the mathematical models built into the plugi
 
     Seamlessly switch between dark and light modes, and capture the most beautiful mathematical moments as images at any time—preserving the beauty of the universe's order in every frame.
 
+### Installation
+
+[Download on Chrome Web Store](https://chromewebstore.google.com/detail/math-wonder-box/epeepihmdgmaopknhmlfohkmmhdmkgam)
+
 ## 📖 How to Use
 
 1. First Use: Simply open a new tab after installation to enter the world of mathematical art.
