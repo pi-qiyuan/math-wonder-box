@@ -518,15 +518,6 @@
   }
 
   function draw(canvas, view, subsampling = 1) {
-    // Always sync the latest view into the module-level variable that
-    // tick() reads from. Previously tick() kept re-using the exact `view`
-    // object reference captured on the very first draw() call (since the
-    // recursive requestAnimationFrame loop only got scheduled once, gated
-    // by `if (!animationId)`). If the caller updates pan/zoom by passing a
-    // brand-new view object on each drag/zoom frame (rather than mutating
-    // the same object in place), all of those updates were silently
-    // dropped once the loop was already running -- which looks exactly
-    // like "dragging and zooming stopped working".
     currentView = view;
     if (!gl) {
       if (!initGL(canvas)) return;
@@ -534,6 +525,7 @@
     }
     ensureVisibilityListener(canvas);
     isPageVisible = !document.hidden;
+    render(canvas, currentView);
     if (!animationId && isPageVisible) {
       animationId = requestAnimationFrame(ts => tick(canvas, ts));
     }

@@ -152,8 +152,8 @@
   // ── WebGL 初始化 ──────────────────────────────────────────────────────────
   function initGL(canvas) {
     // 优先 webgl，回退 experimental-webgl（Safari 老版本）
-    const ctx = canvas.getContext("webgl", { antialias: false, alpha: false })
-              || canvas.getContext("experimental-webgl", { antialias: false, alpha: false });
+    const ctx = canvas.getContext("webgl", { antialias: false, alpha: false, preserveDrawingBuffer: true })
+              || canvas.getContext("experimental-webgl", { antialias: false, alpha: false, preserveDrawingBuffer: true });
     if (!ctx) return false;
     gl = ctx;
 
@@ -275,14 +275,18 @@
     animationId = requestAnimationFrame(ts => tick(canvas, view, ts));
   }
 
-  // ── 公开接口（与原版完全兼容）────────────────────────────────────────────
   function draw(canvas, view, subsampling = 1) {
     if (animationId) { cancelAnimationFrame(animationId); animationId = null; }
 
-    // WebGL 版本不需要 subsampling 概念：
-    // 始终全分辨率渲染，GPU 无感知成本。
-    // subsampling 参数保留只是为了接口兼容。
     lastFrameTime = 0;
+    const preset = PRESETS[currentPresetIndex];
+    let cReal = preset.real, cImag = preset.imag;
+    if (preset.drift) {
+      const a = preset.driftAmount || 0.01;
+      cReal += Math.sin(time * 0.3) * a;
+      cImag += Math.cos(time * 0.5) * a;
+    }
+    renderFrame(canvas, view, cReal, cImag);
     animationId = requestAnimationFrame(ts => tick(canvas, view, ts));
   }
 

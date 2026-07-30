@@ -128,8 +128,8 @@
   `;
 
   function initGL(canvas) {
-    const ctx = canvas.getContext("webgl", { antialias: false, alpha: false })
-              || canvas.getContext("experimental-webgl", { antialias: false, alpha: false });
+    const ctx = canvas.getContext("webgl", { antialias: false, alpha: false, preserveDrawingBuffer: true })
+              || canvas.getContext("experimental-webgl", { antialias: false, alpha: false, preserveDrawingBuffer: true });
     if (!ctx) return false;
     gl = ctx;
 
@@ -237,11 +237,13 @@
   }
 
   function draw(canvas, view, subsampling = 1) {
-    cleanup();
+    if (animationId) cancelAnimationFrame(animationId);
+    animationId = null;
     if (points[0] === 0 && points[1] === 0) {
       initPoints(PRESETS[currentPresetIndex].points);
     }
     lastFrameTime = 0;
+    renderFrame(canvas, view);
     animationId = requestAnimationFrame(ts => tick(canvas, view, ts));
   }
 
