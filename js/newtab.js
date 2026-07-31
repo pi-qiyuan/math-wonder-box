@@ -403,15 +403,56 @@ function bindFractalControls() {
   });
 
   viewExplanationButton.addEventListener("click", () => {
-    if (activeSet.explanationUrl) {
-      let url = activeSet.explanationUrl;
-      const locale = chrome.i18n.getUILanguage();
-      if (locale.startsWith("zh")) {
-        url = url.replace(".html", "_zh.html");
-      }
-      window.location.href = url;
+    if (activeSet?.explanationUrl) {
+      window.location.href = getExplanationTargetUrl(activeSet.explanationUrl);
     }
   });
+}
+
+function getExplanationTargetUrl(explanationUrl) {
+  if (!explanationUrl) return "";
+  let path = explanationUrl;
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    try {
+      path = new URL(path).pathname;
+    } catch {
+      return path;
+    }
+  }
+  if (!path.startsWith("/")) {
+    path = "/" + path;
+  }
+
+  const rawLang = (typeof chrome !== "undefined" && chrome.i18n?.getUILanguage
+    ? chrome.i18n.getUILanguage()
+    : navigator.language || "en").toLowerCase();
+
+  if (rawLang.startsWith("en")) {
+    return "https://hugbear.ai" + path;
+  }
+
+  let langPrefix = null;
+  if (rawLang.startsWith("zh")) {
+    langPrefix = "zh";
+  } else if (rawLang.startsWith("pt")) {
+    langPrefix = "pt-br";
+  } else if (rawLang.startsWith("de")) {
+    langPrefix = "de";
+  } else if (rawLang.startsWith("es")) {
+    langPrefix = "es";
+  } else if (rawLang.startsWith("fr")) {
+    langPrefix = "fr";
+  } else if (rawLang.startsWith("ja")) {
+    langPrefix = "ja";
+  } else if (rawLang.startsWith("ko")) {
+    langPrefix = "ko";
+  }
+
+  if (langPrefix) {
+    return "https://hugbear.ai/" + langPrefix + path;
+  }
+
+  return "https://hugbear.ai" + path;
 }
 
 /**
@@ -438,7 +479,12 @@ function clearActiveCanvas() {
 
   // Differentiate clearing by canvas type to avoid context locking
   if (activeCanvas === canvasWebgl) {
-    const gl = activeCanvas.getContext("webgl") || activeCanvas.getContext("experimental-webgl");
+    // This can be the first WebGL context request for the shared canvas. Context
+    // attributes are fixed at creation, so it must preserve its drawing buffer
+    // for the Save action's toDataURL() call to capture the rendered frame.
+    const contextOptions = { antialias: false, alpha: false, preserveDrawingBuffer: true };
+    const gl = activeCanvas.getContext("webgl", contextOptions)
+      || activeCanvas.getContext("experimental-webgl", contextOptions);
     if (gl) {
       const r = isDark ? 0.0196 : 0.9725;
       const g = isDark ? 0.0235 : 0.9804;
@@ -494,6 +540,7 @@ async function loadFractal(setName) {
   resetButton.style.display = "inline-flex";
   const canRandomize = config.hasRandomize !== false;
   nextButton.style.display = canRandomize ? "inline-flex" : "none";
+  viewExplanationButton.style.display = activeSet?.explanationUrl ? "inline-flex" : "none";
   
   localize();
   drawActiveSet(1);

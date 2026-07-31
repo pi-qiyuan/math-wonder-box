@@ -157,7 +157,7 @@
       cleanup,
       pointToComplex,
       formula: "zₙ₊₁ = zₙ² + c",
-      // explanationUrl: "explanations/mandelbrot.html",
+      explanationUrl: "/tools/math-wonder-box/mandelbrot-set.html",
     },
   };
 })(window);

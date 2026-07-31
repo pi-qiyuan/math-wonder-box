@@ -302,7 +302,7 @@
       get currentNameKey() { return PRESETS[currentPresetIndex].nameKey; },
       draw, cleanup, randomize, reset,
       formula: "zₙ₊₁ = zₙ² + c",
-      // explanationUrl: "explanations/julia.html",
+      explanationUrl: "/tools/math-wonder-box/julia-set.html",
     },
   };
 })(window);
