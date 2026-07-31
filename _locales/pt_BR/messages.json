@@ -71,6 +71,7 @@
   "barnsley_preset_leptosporangiate": { "message": "Leptosporangiada" },
   "barnsley_preset_slender": { "message": "Delicada" },
   "barnsley_preset_spiral": { "message": "Espiral" },
+  "barnsley_preset_maple": { "message": "Folha de bordo" },
 
   "bifurcation_canvas_aria": { "message": "Diagrama de bifurcação" },
   "bifurcation_eyebrow": { "message": "Teoria do caos e mapas logísticos" },

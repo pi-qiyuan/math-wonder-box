@@ -71,6 +71,7 @@
   "barnsley_preset_leptosporangiate": { "message": "박막포자낭형" },
   "barnsley_preset_slender": { "message": "슬렌더" },
   "barnsley_preset_spiral": { "message": "나선형" },
+  "barnsley_preset_maple": { "message": "단풍잎" },
 
   "bifurcation_canvas_aria": { "message": "분기 다이어그램" },
   "bifurcation_eyebrow": { "message": "카오스 이론과 로지스틱 맵" },

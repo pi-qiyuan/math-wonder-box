@@ -76,7 +76,18 @@
         { a: 0.18, b: -0.24, c: 0.22,  d: 0.2,  e: 0,   f: 1.6,  p: 0.93 },
         { a: -0.15,b: 0.28,  c: 0.24,  d: 0.22, e: 0.1, f: 0.44, p: 1.00 }
       ]
-    }
+    },
+    {
+      id: "maple",
+      nameKey: "barnsley_preset_maple",
+      view: { centerX: 0.0, centerY: 0.0, scale: 10 },
+      transforms: [
+        { a: 0.14,  b: 0.01,  c: 0,     d: 0.51,  e: -0.08, f: -1.31, p: 0.10 },
+        { a: 0.43,  b: 0.52,  c: -0.45, d: 0.5,   e: 1.49,  f: -0.75, p: 0.45 },
+        { a: 0.45,  b: -0.49, c: 0.47,  d: 0.47,  e: -1.62, f: -0.74, p: 0.80 },
+        { a: 0.49,  b: 0,     c: 0,     d: 0.51,  e: 0.02,  f: 1.62,  p: 1.00 }
+      ]
+    },
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
@@ -290,7 +301,7 @@
       cleanup,
       randomize,
       get currentNameKey() { return activePreset.nameKey; },
-      // explanationUrl: "explanations/barnsley_fern.html",
+      explanationUrl: "/tools/math-wonder-box/barnsley-fern.html",
     },
   };
 })(window);

@@ -71,6 +71,7 @@
   "barnsley_preset_leptosporangiate": { "message": "Leptosporangiate Fern" },
   "barnsley_preset_slender": { "message": "Slender Fern" },
   "barnsley_preset_spiral": { "message": "Spiral Fern" },
+  "barnsley_preset_maple": { "message": "Maple leaf" },
 
   "bifurcation_canvas_aria": { "message": "Bifurcation Diagram" },
   "bifurcation_eyebrow": { "message": "Chaos Theory & Logistic Map" },

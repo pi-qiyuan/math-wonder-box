@@ -71,6 +71,7 @@
   "barnsley_preset_leptosporangiate": { "message": "薄囊蕨" },
   "barnsley_preset_slender": { "message": "纤细蕨" },
   "barnsley_preset_spiral": { "message": "扭转蕨" },
+  "barnsley_preset_maple": { "message": "枫叶" },
 
   "bifurcation_canvas_aria": { "message": "分岔图" },
   "bifurcation_eyebrow": { "message": "混沌理论与逻辑映射" },

@@ -71,6 +71,7 @@
   "barnsley_preset_leptosporangiate": { "message": "薄嚢シダ" },
   "barnsley_preset_slender": { "message": "スレンダー" },
   "barnsley_preset_spiral": { "message": "スパイラル" },
+  "barnsley_preset_maple": { "message": "カエデの葉" },
 
   "bifurcation_canvas_aria": { "message": "分岐図" },
   "bifurcation_eyebrow": { "message": "カオス理論とロジスティック写像" },
