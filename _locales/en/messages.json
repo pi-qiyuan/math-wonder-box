@@ -263,7 +263,7 @@
   "mandelbrot_canvas_aria": { "message": "Mandelbrot set" },
   "mandelbrot_eyebrow": { "message": "Simple Mandelbrot Set" },
   "mandelbrot_title": { "message": "Mandelbrot" },
-  
+
   "newton_canvas_aria": { "message": "Newton fractal" },
   "newton_eyebrow": { "message": "Root Finding Iteration" },
   "newton_title": { "message": "Newton Fractal" },

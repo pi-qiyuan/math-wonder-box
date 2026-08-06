@@ -158,8 +158,8 @@
   "fibonacci_preset_classic": { "message": "古典的な黄金螺旋" },
   "fibonacci_preset_rainbow": { "message": "虹色の正方形" },
   "fibonacci_preset_depth": { "message": "モノクロの奥行き" },
-  "fibonacci_tree_canvas_aria": { "message": "フィボナッチの木" },
 
+  "fibonacci_tree_canvas_aria": { "message": "フィボナッチの木" },
   "fibonacci_tree_eyebrow": { "message": "再帰的成長" },
   "fibonacci_tree_title": { "message": "フィボナッチの木" },
   "fibonacci_tree_preset_golden": { "message": "黄金比の木" },

@@ -1,20 +1,18 @@
 (function registerFibonacciTree(global) {
-  const PHI = (1 + Math.sqrt(5)) / 2;
-  const MAX_DEPTH = 12;
   const GROW_SPEED = 0.025;
 
   const PRESETS = [
-    { id: "classic-tree",  nameKey: "fibonacci_tree_preset_classic",  r1: 0.72,    r2: 0.72,            angle1: -Math.PI / 8,    angle2: Math.PI / 8,   branchColor: "nature"   },
-    { id: "winter-tree",   nameKey: "fibonacci_tree_preset_winter",   r1: 0.8,     r2: 0.5,             angle1: -Math.PI / 15,   angle2: Math.PI / 3.5, branchColor: "gray"     },
-    { id: "sakura-tree",   nameKey: "fibonacci_tree_preset_sakura",   r1: 0.75,    r2: 0.75,            angle1: -Math.PI / 4,    angle2: Math.PI / 4,   branchColor: "sakura"   },
-    { id: "coral-tree",    nameKey: "fibonacci_tree_preset_coral",    r1: 0.85,    r2: 0.4,             angle1: -Math.PI / 10,   angle2: Math.PI / 2.5, branchColor: "coral"    },
-    { id: "autumn-tree",   nameKey: "fibonacci_tree_preset_autumn",   r1: 0.8,     r2: 0.8,             angle1: -Math.PI / 12,   angle2: Math.PI / 12,  branchColor: "autumn"   },
-    { id: "neon-tree",     nameKey: "fibonacci_tree_preset_neon",     r1: 0.78,    r2: 0.78,            angle1: -Math.PI / 6,    angle2: Math.PI / 6,   branchColor: "neon"     },
-    { id: "bonsai-tree",   nameKey: "fibonacci_tree_preset_bonsai",   r1: 0.88,    r2: 0.88,            angle1: -Math.PI / 24,   angle2: Math.PI / 24,  branchColor: "bonsai"   },
-    { id: "midnight-tree", nameKey: "fibonacci_tree_preset_midnight", r1: 0.7,     r2: 0.65,            angle1: -Math.PI / 3,    angle2: Math.PI / 6,   branchColor: "midnight" },
-    { id: "ocean-tree",    nameKey: "fibonacci_tree_preset_ocean",    r1: 0.75,    r2: 0.55,            angle1: -Math.PI / 6,    angle2: -Math.PI / 18, branchColor: "ocean"    },
-    { id: "emerald-tree",  nameKey: "fibonacci_tree_preset_emerald",  r1: 0.7,     r2: 0.65,            angle1: -Math.PI / 2.25, angle2: Math.PI / 9,   branchColor: "emerald"  },
-    { id: "frost-tree",    nameKey: "fibonacci_tree_preset_frost",    r1: 0.71,    r2: 0.71,            angle1: -Math.PI / 2.5,  angle2: Math.PI / 2.5, branchColor: "frost"    },
+    { id: "classic-tree",  nameKey: "fibonacci_tree_preset_classic",  r1: 0.72, r2: 0.72, angle1: -Math.PI / 8,    angle2: Math.PI / 8,   branchColor: "nature",   maxDepth: 14 },
+    { id: "winter-tree",   nameKey: "fibonacci_tree_preset_winter",   r1: 0.8,  r2: 0.5,  angle1: -Math.PI / 15,   angle2: Math.PI / 3.5, branchColor: "gray",     maxDepth: 14 },
+    { id: "sakura-tree",   nameKey: "fibonacci_tree_preset_sakura",   r1: 0.75, r2: 0.75, angle1: -Math.PI / 4,    angle2: Math.PI / 4,   branchColor: "sakura",   maxDepth: 14 },
+    { id: "coral-tree",    nameKey: "fibonacci_tree_preset_coral",    r1: 0.85, r2: 0.4,  angle1: -Math.PI / 10,   angle2: Math.PI / 2.5, branchColor: "coral",    maxDepth: 14 },
+    { id: "autumn-tree",   nameKey: "fibonacci_tree_preset_autumn",   r1: 0.8,  r2: 0.8,  angle1: -Math.PI / 12,   angle2: Math.PI / 12,  branchColor: "autumn",   maxDepth: 14 },
+    { id: "neon-tree",     nameKey: "fibonacci_tree_preset_neon",     r1: 0.78, r2: 0.78, angle1: -Math.PI / 6,    angle2: Math.PI / 6,   branchColor: "neon",     maxDepth: 14 },
+    { id: "bonsai-tree",   nameKey: "fibonacci_tree_preset_bonsai",   r1: 0.88, r2: 0.88, angle1: -Math.PI / 24,   angle2: Math.PI / 24,  branchColor: "bonsai",   maxDepth: 14 },
+    { id: "midnight-tree", nameKey: "fibonacci_tree_preset_midnight", r1: 0.7,  r2: 0.65, angle1: -Math.PI / 3,    angle2: Math.PI / 6,   branchColor: "midnight", maxDepth: 14 },
+    { id: "ocean-tree",    nameKey: "fibonacci_tree_preset_ocean",    r1: 0.75, r2: 0.55, angle1: -Math.PI / 6,    angle2: -Math.PI / 18, branchColor: "ocean",    maxDepth: 14 },
+    { id: "emerald-tree",  nameKey: "fibonacci_tree_preset_emerald",  r1: 0.7,  r2: 0.65, angle1: -Math.PI / 2.25, angle2: Math.PI / 9,   branchColor: "emerald",  maxDepth: 14 },
+    { id: "frost-tree",    nameKey: "fibonacci_tree_preset_frost",    r1: 0.71, r2: 0.71, angle1: -Math.PI / 2.5,  angle2: Math.PI / 2.5, branchColor: "frost",    maxDepth: 14 },
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
@@ -47,11 +45,15 @@
     pauseTimer = 0;
   }
 
-  function drawBranch(ctx, length, depth, preset, isDark) {
-    if (depth <= 0) return;
+  // A Fibonacci tree is not a full binary tree: its two descendants have
+  // consecutive Fibonacci orders, T(n - 1) and T(n - 2).
+  function drawBranch(ctx, length, order, preset, isDark, turn = 1) {
+    // T(0) and T(1) are terminal vertices; every higher order splits into
+    // T(n - 1) and T(n - 2).
+    if (order < 0) return;
 
-    const opacity = Math.min(depth, 1.0);
-    const scale = Math.min(depth, 1.0);
+    const opacity = 1;
+    const scale = 1;
 
     ctx.save();
     ctx.globalAlpha *= opacity;
@@ -60,11 +62,11 @@
     ctx.beginPath();
     ctx.moveTo(0, 0);
     ctx.lineTo(0, -length * scale);
-    ctx.lineWidth = Math.max(0.5, depth * 0.8);
+    ctx.lineWidth = Math.max(0.5, order * 0.8);
     ctx.lineCap = "round";
     
     // Color logic
-    const colorDepth = depth / MAX_DEPTH;
+    const colorDepth = order / preset.maxDepth;
     if (preset.branchColor === "golden") {
         ctx.strokeStyle = `rgba(212, 175, 55, ${0.4 + colorDepth})`;
     } else if (preset.branchColor === "nature") {
@@ -103,21 +105,23 @@
     // Move to end of branch
     ctx.translate(0, -length * scale);
 
-    if (depth > 1) {
-        // Dynamic sway
-        const sway = Math.sin(time + depth * 0.5) * 0.03;
+    if (order > 1) {
+      // Dynamic sway
+      const sway = Math.sin(time + order * 0.5) * 0.03;
 
-        // Left branch
-        ctx.save();
-        ctx.rotate(preset.angle1 + sway);
-        drawBranch(ctx, length * preset.r1, depth - 1, preset, isDark);
-        ctx.restore();
+      // The n - 1 branch is the continuing stem. Alternating the turn keeps
+      // the tree balanced while the smaller n - 2 branch reads as a lateral.
+      ctx.save();
+      ctx.rotate(preset.angle1 * turn + sway);
+      drawBranch(ctx, length * preset.r1, order - 1, preset, isDark, -turn);
+      ctx.restore();
 
-        // Right branch
-        ctx.save();
-        ctx.rotate(preset.angle2 + sway);
-        drawBranch(ctx, length * preset.r2, depth - 1, preset, isDark);
-        ctx.restore();
+      // This shorter subtree is what distinguishes the Fibonacci recurrence
+      // from an ordinary symmetric binary fractal.
+      ctx.save();
+      ctx.rotate(preset.angle2 * turn - sway);
+      drawBranch(ctx, length * preset.r2, order - 2, preset, isDark, turn);
+      ctx.restore();
     }
     
     ctx.restore();
@@ -130,9 +134,11 @@
     ctx.fillStyle = isDark ? "#121212" : "#ffffff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
+    const preset = PRESETS[currentPresetIndex];
+    const maxDepth = preset.maxDepth;
     time += 0.015;
-    if (growth < MAX_DEPTH) {
-        growth += GROW_SPEED;
+    if (growth < maxDepth) {
+      growth += GROW_SPEED;
     } else {
         pauseTimer += 1;
         if (pauseTimer > 60 * 10) { // 5 seconds at ~60fps
@@ -140,7 +146,6 @@
         }
     }
 
-    const preset = PRESETS[currentPresetIndex];
     const width = canvas.width;
     const height = canvas.height;
     
@@ -151,7 +156,7 @@
 
     ctx.save();
     ctx.translate(centerX, centerY);
-    drawBranch(ctx, baseLength, Math.min(growth, MAX_DEPTH), preset, isDark);
+    drawBranch(ctx, baseLength, Math.max(1, Math.floor(Math.min(growth, maxDepth))), preset, isDark);
     ctx.restore();
     
     animationId = requestAnimationFrame(() => tick(canvas, view));
@@ -176,7 +181,9 @@
 
       ctx.save();
       ctx.translate(centerX, centerY);
-      drawBranch(ctx, baseLength, Math.min(growth, MAX_DEPTH), preset, isDark);
+
+      const maxDepth = preset.maxDepth;
+      drawBranch(ctx, baseLength, Math.max(1, Math.floor(Math.min(growth, maxDepth))), preset, isDark);
       ctx.restore();
     }
   }
@@ -192,7 +199,7 @@
       randomize,
       reset,
       formula: "Fₙ = Fₙ₋₁ + Fₙ₋₂",
-      // explanationUrl: "explanations/fibonacci_tree.html",
+      explanationUrl: "/tools/math-wonder-box/fibonacci-tree.html",
     },
   };
 })(window);

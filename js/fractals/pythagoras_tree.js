@@ -134,6 +134,7 @@
     time += 0.01;
     if (growth < MAX_DEPTH) {
       growth += GROW_SPEED;
+      animationId = requestAnimationFrame(() => tick(canvas, view));
     }
 
     const preset = PRESETS[currentPresetIndex];
@@ -154,8 +155,6 @@
 
     drawRecursiveSquare(ctx, baseSize, 0, growth, preset.angle, preset.colorType, isDark);
     ctx.restore();
-
-    animationId = requestAnimationFrame(() => tick(canvas, view));
   }
 
   function draw(canvas, view, subsampling = 1) {
@@ -199,7 +198,7 @@
       get formula() {
         return PRESETS[currentPresetIndex].formula;
       },
-      // explanationUrl: "explanations/pythagoras_tree.html",
+      explanationUrl: "/tools/math-wonder-box/pythagoras-tree.html",
     },
   };
 })(window);

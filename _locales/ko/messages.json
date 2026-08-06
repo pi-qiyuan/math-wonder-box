@@ -158,8 +158,8 @@
   "fibonacci_preset_classic": { "message": "전형적인 황금 나선" },
   "fibonacci_preset_rainbow": { "message": "무지개색 정사각형" },
   "fibonacci_preset_depth": { "message": "단색의 깊이감" },
-  "fibonacci_tree_canvas_aria": { "message": "피보나치 나무" },
 
+  "fibonacci_tree_canvas_aria": { "message": "피보나치 나무" },
   "fibonacci_tree_eyebrow": { "message": "재귀적 성장" },
   "fibonacci_tree_title": { "message": "피보나치 나무" },
   "fibonacci_tree_preset_golden": { "message": "황금비 나무" },

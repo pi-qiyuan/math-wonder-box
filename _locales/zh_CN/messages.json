@@ -158,8 +158,8 @@
   "fibonacci_preset_classic": { "message": "经典黄金螺旋" },
   "fibonacci_preset_rainbow": { "message": "彩虹方块" },
   "fibonacci_preset_depth": { "message": "单色深度" },
-  "fibonacci_tree_canvas_aria": { "message": "斐波那契树" },
 
+  "fibonacci_tree_canvas_aria": { "message": "斐波那契树" },
   "fibonacci_tree_eyebrow": { "message": "递归生长" },
   "fibonacci_tree_title": { "message": "斐波那契树" },
   "fibonacci_tree_preset_golden": { "message": "黄金比例树" },

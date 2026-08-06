@@ -158,8 +158,8 @@
   "fibonacci_preset_classic": { "message": "Spirale d'or classique" },
   "fibonacci_preset_rainbow": { "message": "Carrés arc-en-ciel" },
   "fibonacci_preset_depth": { "message": "Profondeur monochrome" },
-  "fibonacci_tree_canvas_aria": { "message": "Arbre de Fibonacci" },
 
+  "fibonacci_tree_canvas_aria": { "message": "Arbre de Fibonacci" },
   "fibonacci_tree_eyebrow": { "message": "Croissance récursive" },
   "fibonacci_tree_title": { "message": "Arbre de Fibonacci" },
   "fibonacci_tree_preset_golden": { "message": "Arbre au nombre d'or" },

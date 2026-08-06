@@ -158,8 +158,8 @@
   "fibonacci_preset_classic": { "message": "Klassische goldene Spirale" },
   "fibonacci_preset_rainbow": { "message": "Regenbogen-Quadrate" },
   "fibonacci_preset_depth": { "message": "Monochrome Tiefe" },
-  "fibonacci_tree_canvas_aria": { "message": "Fibonacci-Baum" },
 
+  "fibonacci_tree_canvas_aria": { "message": "Fibonacci-Baum" },
   "fibonacci_tree_eyebrow": { "message": "Rekursives Wachstum" },
   "fibonacci_tree_title": { "message": "Fibonacci-Baum" },
   "fibonacci_tree_preset_golden": { "message": "Baum des Goldenen Schnitts" },
@@ -325,7 +325,7 @@
   "pythagoras_preset_neon": { "message": "Neon-Traum" },
   "pythagoras_preset_sakura": { "message": "Kirschblütenwind" },
   "pythagoras_preset_ocean": { "message": "Tiefes Ozeanblau" },
-  "pythagoras_preset_fire": { "message": "Loderndes Feue烈焰燃烧" },
+  "pythagoras_preset_fire": { "message": "Loderndes Feue" },
 
   "rd_canvas_aria": { "message": "Reaktions-Diffusions-System" },
   "rd_eyebrow": { "message": "Musterbildung" },

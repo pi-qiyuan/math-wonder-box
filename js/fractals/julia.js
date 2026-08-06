@@ -2,14 +2,14 @@
   const DEFAULT_VIEW = { centerX: 0, centerY: 0, scale: 3.0, };
 
   const PRESETS = [
-    { id: "golden",      real: -0.8,    imag:  0.156,  drift: true, driftAmount: 0.008, nameKey: "julia_preset_golden"      },
-    { id: "dendrite",    real:  0,      imag:  0.8,    drift: true, driftAmount: 0.003, nameKey: "julia_preset_dendrite"    },
-    { id: "rabbit",      real: -0.123,  imag:  0.745,  drift: true, driftAmount: 0.012, nameKey: "julia_preset_rabbit"      },
-    { id: "sanmarco",    real: -0.75,   imag:  0,      drift: true, driftAmount: 0.005, nameKey: "julia_preset_sanmarco"    },
-    { id: "siegel",      real: -0.391,  imag:  0.587,  drift: true, driftAmount: 0.007, nameKey: "julia_preset_siegel"      },
-    { id: "cauliflower", real:  0.285,  imag:  0.01,   drift: true, driftAmount: 0.006, nameKey: "julia_preset_cauliflower" },
-    { id: "clouds",      real: -0.4,    imag:  0.6,    drift: true, driftAmount: 0.01,  nameKey: "julia_preset_clouds"      },
-    { id: "galaxy",      real: -0.7269, imag:  0.1889, drift: true, driftAmount: 0.015, nameKey: "julia_preset_galaxy"      }
+    { id: "golden",      real: -0.8,    imag:  0.156,  driftAmount: 0.008, nameKey: "julia_preset_golden"      },
+    { id: "dendrite",    real:  0,      imag:  0.8,    driftAmount: 0.003, nameKey: "julia_preset_dendrite"    },
+    { id: "rabbit",      real: -0.123,  imag:  0.745,  driftAmount: 0.012, nameKey: "julia_preset_rabbit"      },
+    { id: "sanmarco",    real: -0.75,   imag:  0,      driftAmount: 0.005, nameKey: "julia_preset_sanmarco"    },
+    { id: "siegel",      real: -0.391,  imag:  0.587,  driftAmount: 0.007, nameKey: "julia_preset_siegel"      },
+    { id: "cauliflower", real:  0.285,  imag:  0.01,   driftAmount: 0.006, nameKey: "julia_preset_cauliflower" },
+    { id: "clouds",      real: -0.4,    imag:  0.6,    driftAmount: 0.01,  nameKey: "julia_preset_clouds"      },
+    { id: "galaxy",      real: -0.7269, imag:  0.1889, driftAmount: 0.015, nameKey: "julia_preset_galaxy"      }
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
@@ -264,11 +264,9 @@
     time += FRAME_INTERVAL / 1000;
 
     let cReal = preset.real, cImag = preset.imag;
-    if (preset.drift) {
-      const a = preset.driftAmount || 0.01;
-      cReal += Math.sin(time * 0.3) * a;
-      cImag += Math.cos(time * 0.5) * a;
-    }
+    const a = preset.driftAmount || 0.01;
+    cReal += Math.sin(time * 0.3) * a;
+    cImag += Math.cos(time * 0.5) * a;
 
     // GPU 渲染是同步的（在 rAF 回调里），直接调用，无需 Promise/Worker
     renderFrame(canvas, view, cReal, cImag);
@@ -281,11 +279,9 @@
     lastFrameTime = 0;
     const preset = PRESETS[currentPresetIndex];
     let cReal = preset.real, cImag = preset.imag;
-    if (preset.drift) {
-      const a = preset.driftAmount || 0.01;
-      cReal += Math.sin(time * 0.3) * a;
-      cImag += Math.cos(time * 0.5) * a;
-    }
+    const a = preset.driftAmount || 0.01;
+    cReal += Math.sin(time * 0.3) * a;
+    cImag += Math.cos(time * 0.5) * a;
     renderFrame(canvas, view, cReal, cImag);
     animationId = requestAnimationFrame(ts => tick(canvas, view, ts));
   }

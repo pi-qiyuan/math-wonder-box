@@ -221,7 +221,7 @@
       randomize,
       reset,
       formula: "φ = n · 137.5°, r = c√n",
-      // explanationUrl: "explanations/phyllotaxis.html",
+      explanationUrl: "/tools/math-wonder-box/fibonacci-phyllotaxis.html",
     },
   };
 })(window);

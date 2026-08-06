@@ -158,8 +158,8 @@
   "fibonacci_preset_classic": { "message": "Espiral áurea clásica" },
   "fibonacci_preset_rainbow": { "message": "Cuadrados arcoíris" },
   "fibonacci_preset_depth": { "message": "Profundidad monocromática" },
-  "fibonacci_tree_canvas_aria": { "message": "Árbol de Fibonacci" },
 
+  "fibonacci_tree_canvas_aria": { "message": "Árbol de Fibonacci" },
   "fibonacci_tree_eyebrow": { "message": "Crecimiento recursivo" },
   "fibonacci_tree_title": { "message": "Árbol de Fibonacci" },
   "fibonacci_tree_preset_golden": { "message": "Árbol de la proporción áurea" },
