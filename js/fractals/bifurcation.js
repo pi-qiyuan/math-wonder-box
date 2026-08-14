@@ -191,7 +191,7 @@
       get formula() { 
         return PRESETS[currentPresetIndex].formula;
       },
-      // explanationUrl: "explanations/bifurcation.html",
+      explanationUrl: "/tools/math-wonder-box/bifurcation.html",
     },
   };
 })(window);

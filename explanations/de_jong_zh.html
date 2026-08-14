@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>德容吸引子 - 数学盲盒</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← 返回新标签页</a>
+
+      <header>
+        <p class="eyebrow">动态德容吸引子</p>
+        <h1>德容吸引子</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>什么是德容吸引子？</h2>
+        <p>德容吸引子是由天文学家彼得·德容（Peter de Jong）发现的一种奇异吸引子。与克利福德吸引子类似，它也由一对结合正弦与余弦项的递归方程构成，但两条曲线的耦合方式不同，因而生成了另一类独具特色的、层次分明、如星云般绵密的图案。</p>
+
+        <div class="math-block">
+          x<sub>n+1</sub> = sin(a · y<sub>n</sub>) − cos(b · x<sub>n</sub>)<br>
+          y<sub>n+1</sub> = sin(c · x<sub>n</sub>) − cos(d · y<sub>n</sub>)
+        </div>
+
+        <h2>它是如何渲染的？</h2>
+        <p>从一个点出发，反复应用上述方程，每一帧多达数十万次迭代。每个新的 (x, y) 坐标都会被绘制成一个像素。单独一个点看不出什么规律，但随着数百万个点的不断累积，吸引子背后的结构就会从这些点的密度分布中逐渐显现出来。</p>
+
+        <h2>奇异的美感</h2>
+        <p>仅凭 a、b、c、d 四个参数驱动整个系统，德容吸引子却能呈现出惊人丰富的形态——从紧密缠绕的螺旋，到宛如星云般轻柔飘散的点云。任意一个参数的微小调整，都可能重塑整幅图案，这使它成为最值得探索的奇异吸引子家族之一。</p>
+      </section>
+    </main>
+  </body>
+</html>

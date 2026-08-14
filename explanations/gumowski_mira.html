@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gumowski–Mira Attractor - Math Wonder Box</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← Back to New Tab</a>
+      
+      <header>
+        <p class="eyebrow">Dynamic Gumowski–Mira Attractor</p>
+        <h1>Gumowski–Mira Attractor</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>What is a Gumowski–Mira Attractor?</h2>
+        <p>The Gumowski–Mira attractor is a 2D discrete dynamical system discovered in 1980 by Igor Gumowski and Christian Mira while studying particle trajectories in high-energy accelerators at CERN. It displays astonishing geometric patterns resembling starfish, insects, sea shells, and cosmic nebulae.</p>
+        
+        <div class="math-block">
+          x<sub>n+1</sub> = y<sub>n</sub> + α(1 - σy<sub>n</sub><sup>2</sup>)y<sub>n</sub> + f(x<sub>n</sub>)<br>
+          y<sub>n+1</sub> = -x<sub>n</sub> + f(x<sub>n+1</sub>)<br><br>
+          where f(x) = μx + 2(1 - μ)x<sup>2</sup> / (1 + x<sup>2</sup>)
+        </div>
+
+        <h2>How is it rendered?</h2>
+        <p>Starting from an initial point, the map iteratively generates hundreds of thousands of coordinates. By recording point frequencies on the canvas and dynamically rotating the color spectrum over time, organic fractal structures emerge with deep visual depth.</p>
+        
+        <h2>Strange Attractors & Non-linear Dynamics</h2>
+        <p>Because the non-linear function f(x) combines quadratic and rational terms, minor adjustments to parameter μ or α produce sudden bifurcations, morphing symmetric closed orbits into chaotic, feather-like fractal webs.</p>
+      </section>
+    </main>
+  </body>
+</html>

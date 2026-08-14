@@ -243,7 +243,7 @@
       reset,
       get currentNameKey() { return activePreset.nameKey; },
       // formula: "dx/dt = (z-b)x - dy, dy/dt = dx + (z-b)y, dz/dt = c + az - z³/3 - (x²+y²)(1+ez) + fzx³",
-      // explanationUrl: "explanations/aizawa.html",
+      explanationUrl: "/tools/math-wonder-box/aizawa.html",
     },
   };
 })(window);

@@ -2,14 +2,14 @@
   const DEFAULT_VIEW = { centerX: 0, centerY: 0, scale: 4.0 };
 
   const PRESETS = [
-    { id: "classic",        type: "poly", power: 3, alpha: [1.0, 0.0], isNova: false, isInverted: false, nameKey: "newton_preset_classic",        formula: "zₙ₊₁ = zₙ - (zₙ³ - 1) / 3zₙ²"          },
-    { id: "cubic",          type: "poly", power: 4, alpha: [1.0, 0.0], isNova: false, isInverted: false, nameKey: "newton_preset_cubic",          formula: "zₙ₊₁ = zₙ - (zₙ⁴ - 1) / 4zₙ³"          },
-    { id: "relaxed",        type: "poly", power: 3, alpha: [0.8, 0.0], isNova: false, isInverted: false, nameKey: "newton_preset_relaxed",        formula: "zₙ₊₁ = zₙ - 0.8 * f(zₙ)/f'(zₙ)"        },
-    { id: "twisted",        type: "poly", power: 3, alpha: [0.9, 0.3], isNova: false, isInverted: false, nameKey: "newton_preset_twisted",        formula: "zₙ₊₁ = zₙ - (0.9+0.3i) * f(zₙ)/f'(zₙ)" },
-    { id: "nova",           type: "poly", power: 3, alpha: [1.0, 0.0], isNova: true,  isInverted: false, nameKey: "newton_preset_nova",           formula: "zₙ₊₁ = zₙ - f(zₙ)/f'(zₙ) + c"          },
-    { id: "generalized",    type: "poly", power: 5, alpha: [1.0, 0.0], isNova: false, isInverted: false, nameKey: "newton_preset_generalized",    formula: "zₙ₊₁ = zₙ - (z⁵ + Az³ + B) / f'(z)"   },
-    { id: "transcendental", type: "sin",  power: 0, alpha: [1.0, 0.0], isNova: false, isInverted: false, nameKey: "newton_preset_transcendental", formula: "zₙ₊₁ = zₙ - sin(z) / cos(z)"          },
-    { id: "inverted",       type: "poly", power: 3, alpha: [1.0, 0.0], isNova: false, isInverted: true,  nameKey: "newton_preset_inverted",       formula: "Newton set mapped to 1/z"            }
+    { id: "classic",        type: "poly", power: 3, alpha1: 1.0, alpha2: 0.0, isNova: false, isInverted: false, nameKey: "newton_preset_classic",        formula: "zₙ₊₁ = zₙ - (zₙ³ - 1) / 3zₙ²"          },
+    { id: "cubic",          type: "poly", power: 4, alpha1: 1.0, alpha2: 0.0, isNova: false, isInverted: false, nameKey: "newton_preset_cubic",          formula: "zₙ₊₁ = zₙ - (zₙ⁴ - 1) / 4zₙ³"          },
+    { id: "relaxed",        type: "poly", power: 3, alpha1: 0.8, alpha2: 0.0, isNova: false, isInverted: false, nameKey: "newton_preset_relaxed",        formula: "zₙ₊₁ = zₙ - 0.8 * f(zₙ)/f'(zₙ)"        },
+    { id: "twisted",        type: "poly", power: 3, alpha1: 0.9, alpha2: 0.3, isNova: false, isInverted: false, nameKey: "newton_preset_twisted",        formula: "zₙ₊₁ = zₙ - (0.9+0.3i) * f(zₙ)/f'(zₙ)" },
+    { id: "nova",           type: "poly", power: 3, alpha1: 1.0, alpha2: 0.0, isNova: true,  isInverted: false, nameKey: "newton_preset_nova",           formula: "zₙ₊₁ = zₙ - f(zₙ)/f'(zₙ) + c"          },
+    { id: "generalized",    type: "poly", power: 5, alpha1: 1.0, alpha2: 0.0, isNova: false, isInverted: false, nameKey: "newton_preset_generalized",    formula: "zₙ₊₁ = zₙ - (z⁵ + Az³ + B) / f'(z)"   },
+    { id: "transcendental", type: "sin",  power: 0, alpha1: 1.0, alpha2: 0.0, isNova: false, isInverted: false, nameKey: "newton_preset_transcendental", formula: "zₙ₊₁ = zₙ - sin(z) / cos(z)"          },
+    { id: "inverted",       type: "poly", power: 3, alpha1: 1.0, alpha2: 0.0, isNova: false, isInverted: true,  nameKey: "newton_preset_inverted",       formula: "Newton set mapped to 1/z"            }
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
@@ -296,7 +296,7 @@
     gl.uniform1i(uLoc.maxIter,    maxIter);
     gl.uniform2f(uLoc.resolution, canvas.width, canvas.height);
     gl.uniform1i(uLoc.power,      preset.power);
-    gl.uniform2f(uLoc.alpha,      preset.alpha[0], preset.alpha[1]);
+    gl.uniform2f(uLoc.alpha,      preset.alpha1, preset.alpha2);
     gl.uniform1f(uLoc.time,       time);
     gl.uniform1i(uLoc.isNova,     preset.isNova ? 1 : 0);
     gl.uniform1i(uLoc.type,       (preset.type === "sin") ? 1 : 0);
@@ -352,7 +352,7 @@
       get currentNameKey() { return PRESETS[currentPresetIndex].nameKey; },
       draw, cleanup, randomize, reset,
       get formula() { return PRESETS[currentPresetIndex].formula; },
-      // explanationUrl: "explanations/newton.html",
+      explanationUrl: "/tools/math-wonder-box/newton.html",
     },
   };
 })(window);

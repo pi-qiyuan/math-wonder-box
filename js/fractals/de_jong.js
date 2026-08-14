@@ -1,28 +1,28 @@
-(function registerCliffordAttractor(global) {
+(function registerDeJongAttractor(global) {
   const PRESETS = [
-    { a: -1.4, b: 1.6,  c: 1.0,  d: 0.7,  nameKey: "clifford_preset_feather"   },
-    { a: 1.5,  b: -1.8, c: 1.6,  d: 0.9,  nameKey: "clifford_preset_spirals"   },
-    { a: 1.7,  b: 1.7,  c: 0.6,  d: 1.2,  nameKey: "clifford_preset_galaxy"    },
-    { a: -1.7, b: 1.3,  c: -0.1, d: -1.2, nameKey: "clifford_preset_woven"     },
-    { a: -1.8, b: -1.9, c: -1.4, d: 1.1,  nameKey: "clifford_preset_spider"    },
-    { a: 1.1,  b: 1.4,  c: 1.9,  d: -1.1, nameKey: "clifford_preset_orchid"    },
-    { a: -1.2, b: -1.9, c: 0.5,  d: 1.5,  nameKey: "clifford_preset_butterfly" },
-    { a: -1.4, b: 1.5,  c: 1.0,  d: 1.0,  nameKey: "clifford_preset_nebula"    },
-    { a: 1.6,  b: -1.6, c: 0.9,  d: 0.9,  nameKey: "clifford_preset_vortex"    },
-    { a: -1.7, b: 1.5,  c: -1.2, d: 1.3,  nameKey: "clifford_preset_flame"     },
-    { a: -2.0, b: -2.0, c: -1.2, d: 2.0,  nameKey: "clifford_preset_infinity"  },
-    { a: -1.7, b: 1.8,  c: -1.9, d: -0.4, nameKey: "clifford_preset_nautilus"  },
-    { a: -1.3, b: -1.3, c: -1.0, d: -1.0, nameKey: "clifford_preset_quad"      },
-    { a: -1.7, b: 1.8,  c: -1.9, d: 0.4,  nameKey: "clifford_preset_feathery"  },
-    { a: -1.3, b: -1.3, c: -1.8, d: -1.9, nameKey: "clifford_preset_flower"    },
-    { a: -1.4, b: 1.7,  c: 1.8,  d: -1.9, nameKey: "clifford_preset_wings"     },
-    { a: -1.8, b: -2.0, c: 0.5,  d: 0.9,  nameKey: "clifford_preset_branch"    },
-    { a: 1.6,  b: -1.6, c: -1.0, d: 1.0,  nameKey: "clifford_preset_cross"     }
+    { a: -2.0,   b: -2.0,   c: -1.2,   d: 2.0,   nameKey: "de_jong_preset_nebula"    },
+    { a: 1.4,    b: -2.3,   c: 2.4,    d: -2.1,  nameKey: "de_jong_preset_corridor"  },
+    { a: -2.7,   b: -0.09,  c: -0.86,  d: -2.2,  nameKey: "de_jong_preset_ripple"    },
+    { a: -0.827, b: -1.637, c: 1.659,  d: -0.943,nameKey: "de_jong_preset_web"       },
+    { a: 1.4,    b: 1.56,   c: 1.4,    d: -6.56, nameKey: "de_jong_preset_garden"    },
+    { a: -2.24,  b: 0.43,   c: -0.65,  d: -2.43, nameKey: "de_jong_preset_mist"      },
+    { a: 2.01,   b: -2.53,  c: 1.61,   d: -0.33, nameKey: "de_jong_preset_aurora"    },
+    { a: 1.7,    b: 1.7,    c: 0.06,   d: 1.2,   nameKey: "de_jong_preset_hourglass" },
+    { a: -2.7,   b: -0.09,  c: -0.86,  d: -0.94, nameKey: "de_jong_preset_silk"      },
+    { a: -1.244, b: -1.251, c: -1.815, d: -1.734,nameKey: "de_jong_preset_kaleidoscope"},
+    { a: 1.641,  b: 1.902,  c: 0.316,  d: 1.525, nameKey: "de_jong_preset_stardust"  },
+    { a: -2.0,   b: -0.5,   c: -0.9,   d: -2.7,  nameKey: "de_jong_preset_feather"   }
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
   let currentPresetIndex = presetRandomizer.next();
   let baseParams = { ...PRESETS[currentPresetIndex] };
+
+  function step(x, y, a, b, c, d) {
+    const nx = Math.sin(a * y) - Math.cos(b * x);
+    const ny = Math.sin(c * x) - Math.cos(d * y);
+    return [nx, ny];
+  }
 
   function calculateOptimalView(canvas, params) {
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
@@ -33,15 +33,24 @@
     const d = parseFloat(params.d);
 
     for (let i = 0; i < 50000; i++) {
-      const nx = Math.sin(a * ty) + c * Math.cos(a * tx);
-      const ny = Math.sin(b * tx) + d * Math.cos(b * ty);
-      tx = nx; ty = ny;
+      const [nx, ny] = step(tx, ty, a, b, c, d);
+      tx = nx;
+      ty = ny;
+
+      if (!isFinite(tx) || !isFinite(ty) || Math.abs(tx) > 1e4 || Math.abs(ty) > 1e4) {
+        break;
+      }
+
       if (i > 1000) {
         if (tx < minX) minX = tx;
         if (tx > maxX) maxX = tx;
         if (ty < minY) minY = ty;
         if (ty > maxY) maxY = ty;
       }
+    }
+
+    if (!isFinite(minX) || minX >= maxX) {
+      minX = -3; maxX = 3; minY = -3; maxY = 3;
     }
 
     const patternWidth = maxX - minX;
@@ -72,14 +81,14 @@
   function randomize(canvas) {
     currentPresetIndex = presetRandomizer.next();
     const preset = PRESETS[currentPresetIndex];
-    
+
     baseParams = {
-      a: (preset.a + (Math.random() - 0.5) * 0.05).toFixed(3),
-      b: (preset.b + (Math.random() - 0.5) * 0.05).toFixed(3),
-      c: (preset.c + (Math.random() - 0.5) * 0.05).toFixed(3),
-      d: (preset.d + (Math.random() - 0.5) * 0.05).toFixed(3)
+      a: (preset.a + (Math.random() - 0.5) * 0.05).toFixed(4),
+      b: (preset.b + (Math.random() - 0.5) * 0.05).toFixed(4),
+      c: (preset.c + (Math.random() - 0.5) * 0.05).toFixed(4),
+      d: (preset.d + (Math.random() - 0.5) * 0.05).toFixed(4)
     };
-    
+
     currentX = 0.1;
     currentY = 0.1;
 
@@ -106,7 +115,7 @@
     const height = canvas.height;
     const isDark = document.documentElement.classList.contains("theme-dark");
 
-    // 1. Theme-aware fading
+    // 1. Fading background for smooth motion trail
     ctx.fillStyle = isDark ? "rgba(18, 18, 18, 0.02)" : "rgba(255, 255, 255, 0.02)";
     ctx.fillRect(0, 0, width, height);
 
@@ -114,28 +123,31 @@
     const scaleX = view.scale * aspect;
     const scaleY = view.scale;
 
-    // 2. Evolution of time and parameters
+    // 2. Micro parameter dynamics
     time += 0.005;
-    const a = parseFloat(baseParams.a) + Math.sin(time * 0.3) * 0.002;
-    const b = parseFloat(baseParams.b) + Math.cos(time * 0.5) * 0.002;
-    const c = parseFloat(baseParams.c) + Math.sin(time * 0.7) * 0.002;
-    const d = parseFloat(baseParams.d) + Math.cos(time * 0.2) * 0.002;
+    const a = parseFloat(baseParams.a) + Math.sin(time * 0.2) * 0.002;
+    const b = parseFloat(baseParams.b) + Math.cos(time * 0.23) * 0.002;
+    const c = parseFloat(baseParams.c) + Math.sin(time * 0.17) * 0.002;
+    const d = parseFloat(baseParams.d) + Math.cos(time * 0.3) * 0.002;
 
-    // 3. Dynamic Color calculation (HSL)
-    // Speed: time * 20 rotates through colors every ~18 seconds
+    // 3. Dynamic color shift
     const hue = (time * 15) % 360;
     if (isDark) {
-      ctx.fillStyle = `hsla(${hue}, 75%, 65%, 0.6)`; // Glowing pastel
+      ctx.fillStyle = `hsla(${hue}, 75%, 65%, 0.6)`;
     } else {
-      ctx.fillStyle = `hsla(${hue}, 85%, 35%, 0.6)`; // Deep vibrant
+      ctx.fillStyle = `hsla(${hue}, 85%, 35%, 0.6)`;
     }
-    
+
     const batchSize = 10000;
     for (let i = 0; i < batchSize; i++) {
-      const nx = Math.sin(a * currentY) + c * Math.cos(a * currentX);
-      const ny = Math.sin(b * currentX) + d * Math.cos(b * currentY);
+      const [nx, ny] = step(currentX, currentY, a, b, c, d);
       currentX = nx;
       currentY = ny;
+
+      if (!isFinite(currentX) || !isFinite(currentY) || Math.abs(currentX) > 1e4 || Math.abs(currentY) > 1e4) {
+        currentX = 0.1;
+        currentY = 0.1;
+      }
 
       const px = (currentX - view.centerX) / scaleX * width + width / 2;
       const py = (currentY - view.centerY) / scaleY * height + height / 2;
@@ -163,23 +175,29 @@
     const aspect = width / height;
     const scaleX = view.scale * aspect;
     const scaleY = view.scale;
-    const { a, b, c, d } = baseParams;
+    const a = parseFloat(baseParams.a);
+    const b = parseFloat(baseParams.b);
+    const c = parseFloat(baseParams.c);
+    const d = parseFloat(baseParams.d);
 
     let x = currentX, y = currentY;
-    
-    // Use current time-based hue for the burst render as well
+
     const hue = (time * 15) % 360;
     if (isDark) {
       ctx.fillStyle = `hsla(${hue}, 75%, 65%, 0.5)`;
     } else {
       ctx.fillStyle = `hsla(${hue}, 85%, 35%, 0.5)`;
     }
-    
+
     const initialIterations = subsampling > 1 ? 50000 : 250000;
     for (let i = 0; i < initialIterations; i++) {
-      const nx = Math.sin(a * y) + c * Math.cos(a * x);
-      const ny = Math.sin(b * x) + d * Math.cos(b * y);
+      const [nx, ny] = step(x, y, a, b, c, d);
       x = nx; y = ny;
+
+      if (!isFinite(x) || !isFinite(y) || Math.abs(x) > 1e4 || Math.abs(y) > 1e4) {
+        x = 0.1; y = 0.1;
+      }
+
       if (i > 500) {
         const px = (x - view.centerX) / scaleX * width + width / 2;
         const py = (y - view.centerY) / scaleY * height + height / 2;
@@ -188,7 +206,7 @@
         }
       }
     }
-    
+
     currentX = x;
     currentY = y;
 
@@ -205,16 +223,16 @@
 
   global.MathWonderSets = {
     ...(global.MathWonderSets || {}),
-    Clifford: {
-      id: "Clifford",
+    DeJong: {
+      id: "DeJong",
       get defaultView() { return calculateOptimalView(document.getElementById("mandelbrotCanvas"), baseParams); },
       get currentNameKey() { return PRESETS[currentPresetIndex].nameKey; },
       draw,
       cleanup,
       randomize,
       reset,
-      formula: "xₙ₊₁ = sin(ayₙ) + c·cos(axₙ), yₙ₊₁ = sin(bxₙ) + d·cos(byₙ)",
-      explanationUrl: "/tools/math-wonder-box/clifford.html",
+      formula: "xₙ₊₁ = sin(a·yₙ) − cos(b·xₙ), yₙ₊₁ = sin(c·xₙ) − cos(d·yₙ)",
+      //explanationUrl: "explanations/de_jong.html",
     },
   };
 })(window);

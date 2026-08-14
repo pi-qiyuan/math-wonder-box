@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>De Jong Attractor - Math Wonder Box</title>
+    <link rel="stylesheet" href="explanation.css">
+  </head>
+  <body>
+    <main class="explanation-shell">
+      <a href="../newtab.html" class="back-link">← Back to New Tab</a>
+      
+      <header>
+        <p class="eyebrow">Dynamic De Jong Attractor</p>
+        <h1>De Jong Attractor</h1>
+      </header>
+
+      <section class="content-box">
+        <h2>What is a De Jong Attractor?</h2>
+        <p>The De Jong attractor is a strange attractor discovered by astrophysicist Peter de Jong. Like the Clifford attractor, it is built from a pair of recursive equations combining sine and cosine terms, but the two curves are decoupled in a way that produces its own distinctive family of layered, nebula-like patterns.</p>
+        
+        <div class="math-block">
+          x<sub>n+1</sub> = sin(a · y<sub>n</sub>) - cos(b · x<sub>n</sub>)<br>
+          y<sub>n+1</sub> = sin(c · x<sub>n</sub>) - cos(d · y<sub>n</sub>)
+        </div>
+
+        <h2>How is it rendered?</h2>
+        <p>Starting from a single point, the equations above are applied over and over, hundreds of thousands of times per frame. Each new (x, y) coordinate is plotted as a pixel. No single point tells you much, but as millions of points accumulate, the underlying structure of the attractor emerges from the pattern of their density.</p>
+        
+        <h2>Strange Beauty</h2>
+        <p>With only four parameters (a, b, c, d) driving the whole system, the De Jong attractor can produce an astonishing range of forms — from tightly wound spirals to soft, cloud-like drifts of points reminiscent of a nebula. Small adjustments to any one parameter can reshape the entire pattern, making it one of the most visually rich families of strange attractors to explore.</p>
+      </section>
+    </main>
+  </body>
+</html>

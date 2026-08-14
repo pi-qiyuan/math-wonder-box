@@ -4,19 +4,22 @@ const THEME_KEY = "theme";
 const DEFAULT_THEME = "light";
 const CHROME_NATIVE_NEW_TAB_URL = "chrome://new-tab-page/";
 const FRACTALS = [
-  { id: "Aizawa",             labelKey: "aizawa_canvas_aria",          eyebrowKey: "aizawa_eyebrow",          titleKey: "aizawa_title",          invertY: false },
+  { id: "Aizawa",             labelKey: "aizawa_canvas_aria",          eyebrowKey: "aizawa_eyebrow",          titleKey: "aizawa_title",          invertY: false }, //
   { id: "ApollonianGasket",   labelKey: "apollonian_canvas_aria",      eyebrowKey: "apollonian_eyebrow",      titleKey: "apollonian_title",      invertY: true  },
   { id: "BarnsleyFern",       labelKey: "barnsley_canvas_aria",        eyebrowKey: "barnsley_eyebrow",        titleKey: "barnsley_title",        invertY: true  }, //
-  { id: "Bifurcation",        labelKey: "bifurcation_canvas_aria",     eyebrowKey: "bifurcation_eyebrow",     titleKey: "bifurcation_title",     invertY: true  },
+  { id: "Bifurcation",        labelKey: "bifurcation_canvas_aria",     eyebrowKey: "bifurcation_eyebrow",     titleKey: "bifurcation_title",     invertY: true  }, //
   { id: "ChladniFigure",      labelKey: "chladni_canvas_aria",         eyebrowKey: "chladni_eyebrow",         titleKey: "chladni_title",         invertY: false },
-  { id: "Clifford",           labelKey: "clifford_canvas_aria",        eyebrowKey: "clifford_eyebrow",        titleKey: "clifford_title",        invertY: false },
+  { id: "Clifford",           labelKey: "clifford_canvas_aria",        eyebrowKey: "clifford_eyebrow",        titleKey: "clifford_title",        invertY: false }, //
+  { id: "DeJong",             labelKey: "de_jong_canvas_aria",         eyebrowKey: "de_jong_eyebrow",         titleKey: "de_jong_title",         invertY: false },
   { id: "DoublePendulum",     labelKey: "double_pendulum_canvas_aria", eyebrowKey: "double_pendulum_eyebrow", titleKey: "double_pendulum_title", invertY: false },
   { id: "DragonCurve",        labelKey: "dragon_canvas_aria",          eyebrowKey: "dragon_eyebrow",          titleKey: "dragon_title",          invertY: false },
   { id: "Epicycloid",         labelKey: "epicycloid_canvas_aria",      eyebrowKey: "epicycloid_eyebrow",      titleKey: "epicycloid_title",      invertY: false },
   { id: "Fibonacci",          labelKey: "fibonacci_canvas_aria",       eyebrowKey: "fibonacci_eyebrow",       titleKey: "fibonacci_title",       invertY: false },
   { id: "FibonacciTree",      labelKey: "fibonacci_tree_canvas_aria",  eyebrowKey: "fibonacci_tree_eyebrow",  titleKey: "fibonacci_tree_title",  invertY: false }, //
+  { id: "GumowskiMira",       labelKey: "gumowski_mira_canvas_aria",   eyebrowKey: "gumowski_mira_eyebrow",   titleKey: "gumowski_mira_title",   invertY: false },
   { id: "HilbertCurve",       labelKey: "hilbert_canvas_aria",         eyebrowKey: "hilbert_eyebrow",         titleKey: "hilbert_title",         invertY: false },
   { id: "Hopalong",           labelKey: "hopalong_canvas_aria",        eyebrowKey: "hopalong_eyebrow",        titleKey: "hopalong_title",        invertY: false },
+  { id: "Ikeda",              labelKey: "ikeda_canvas_aria",           eyebrowKey: "ikeda_eyebrow",           titleKey: "ikeda_title",           invertY: false },
   { id: "Julia",              labelKey: "julia_canvas_aria",           eyebrowKey: "julia_eyebrow",           titleKey: "julia_title",           invertY: true, renderer: "webgl" }, //
   { id: "KochSnowflake",      labelKey: "koch_canvas_aria",            eyebrowKey: "koch_eyebrow",            titleKey: "koch_title",            invertY: false },
   { id: "LangtonsAnt",        labelKey: "langtons_ant_canvas_aria",    eyebrowKey: "langtons_ant_eyebrow",    titleKey: "langtons_ant_title",    invertY: false },
@@ -24,7 +27,7 @@ const FRACTALS = [
   { id: "Lissajous",          labelKey: "lissajous_canvas_aria",       eyebrowKey: "lissajous_eyebrow",       titleKey: "lissajous_title",       invertY: false },
   { id: "Lorenz",             labelKey: "lorenz_canvas_aria",          eyebrowKey: "lorenz_eyebrow",          titleKey: "lorenz_title",          invertY: false },
   { id: "Mandelbrot",         labelKey: "mandelbrot_canvas_aria",      eyebrowKey: "mandelbrot_eyebrow",      titleKey: "mandelbrot_title",      invertY: false, hasRandomize: false }, //
-  { id: "Newton",             labelKey: "newton_canvas_aria",          eyebrowKey: "newton_eyebrow",          titleKey: "newton_title",          invertY: true, renderer: "webgl", },
+  { id: "Newton",             labelKey: "newton_canvas_aria",          eyebrowKey: "newton_eyebrow",          titleKey: "newton_title",          invertY: true, renderer: "webgl", }, //
   { id: "NoiseFlow",          labelKey: "noise_canvas_aria",           eyebrowKey: "noise_eyebrow",           titleKey: "noise_title",           invertY: true  },
   { id: "PenroseTiling",      labelKey: "penrose_canvas_aria",         eyebrowKey: "penrose_eyebrow",         titleKey: "penrose_title",         invertY: false },
   { id: "Phyllotaxis",        labelKey: "phyllotaxis_canvas_aria",     eyebrowKey: "phyllotaxis_eyebrow",     titleKey: "phyllotaxis_title",     invertY: false }, //
@@ -234,10 +237,7 @@ function searchOrNavigate(value) {
   const query = value.trim();
   if (!query) return;
 
-  const hasProtocol = /^[a-z][a-z0-9+.-]*:\/\//i.test(query);
-  const looksLikeHost = /^[^\s]+\.[^\s]{2,}(\/.*)?$/i.test(query);
-  const target = hasProtocol ? query : looksLikeHost ? `https://${query}` : `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-  window.location.href = target; searchBox.value = "";
+  chrome.search.query({"text": query});
 }
 
 function drawActiveSet(subsampling = 1) {
