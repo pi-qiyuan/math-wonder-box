@@ -1,17 +1,17 @@
 (function registerDeJongAttractor(global) {
   const PRESETS = [
-    { a: -2.0,   b: -2.0,   c: -1.2,   d: 2.0,   nameKey: "de_jong_preset_nebula"    },
-    { a: 1.4,    b: -2.3,   c: 2.4,    d: -2.1,  nameKey: "de_jong_preset_corridor"  },
-    { a: -2.7,   b: -0.09,  c: -0.86,  d: -2.2,  nameKey: "de_jong_preset_ripple"    },
-    { a: -0.827, b: -1.637, c: 1.659,  d: -0.943,nameKey: "de_jong_preset_web"       },
-    { a: 1.4,    b: 1.56,   c: 1.4,    d: -6.56, nameKey: "de_jong_preset_garden"    },
-    { a: -2.24,  b: 0.43,   c: -0.65,  d: -2.43, nameKey: "de_jong_preset_mist"      },
-    { a: 2.01,   b: -2.53,  c: 1.61,   d: -0.33, nameKey: "de_jong_preset_aurora"    },
-    { a: 1.7,    b: 1.7,    c: 0.06,   d: 1.2,   nameKey: "de_jong_preset_hourglass" },
-    { a: -2.7,   b: -0.09,  c: -0.86,  d: -0.94, nameKey: "de_jong_preset_silk"      },
-    { a: -1.244, b: -1.251, c: -1.815, d: -1.734,nameKey: "de_jong_preset_kaleidoscope"},
-    { a: 1.641,  b: 1.902,  c: 0.316,  d: 1.525, nameKey: "de_jong_preset_stardust"  },
-    { a: -2.0,   b: -0.5,   c: -0.9,   d: -2.7,  nameKey: "de_jong_preset_feather"   }
+    { a: -2.0,   b: -2.0,   c: -1.2,   d: 2.0,   nameKey: "de_jong_preset_nebula"       },
+    { a: 1.4,    b: -2.3,   c: 2.4,    d: -2.1,  nameKey: "de_jong_preset_corridor"     },
+    { a: -2.7,   b: -0.09,  c: -0.86,  d: -2.2,  nameKey: "de_jong_preset_ripple"       },
+    { a: -0.827, b: -1.637, c: 1.659,  d: -0.943,nameKey: "de_jong_preset_web"          },
+    { a: 1.4,    b: 1.56,   c: 1.4,    d: -6.56, nameKey: "de_jong_preset_garden"       },
+    { a: -2.24,  b: 0.43,   c: -0.65,  d: -2.43, nameKey: "de_jong_preset_mist"         },
+    { a: 2.01,   b: -2.53,  c: 1.61,   d: -0.33, nameKey: "de_jong_preset_aurora"       },
+    { a: 1.5833, b: 1.6159, c: 0.2043, d: 1.344,  nameKey: "de_jong_preset_hourglass"   },
+    { a: -2.5904,b: -0.1923,c: -0.9417,d: -1.0781,nameKey: "de_jong_preset_silk"        },
+    { a: -1.244, b: -1.251, c: -1.815, d: -1.734,nameKey: "de_jong_preset_kaleidoscope" },
+    { a: 1.641,  b: 1.902,  c: 0.316,  d: 1.525, nameKey: "de_jong_preset_stardust"     },
+    { a: -2.0,   b: -0.5,   c: -0.9,   d: -2.7,  nameKey: "de_jong_preset_feather"      }
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
@@ -232,7 +232,7 @@
       randomize,
       reset,
       formula: "xₙ₊₁ = sin(a·yₙ) − cos(b·xₙ), yₙ₊₁ = sin(c·xₙ) − cos(d·yₙ)",
-      //explanationUrl: "explanations/de_jong.html",
+      explanationUrl: "/tools/math-wonder-box/de_jong.html",
     },
   };
 })(window);
