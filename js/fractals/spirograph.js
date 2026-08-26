@@ -186,7 +186,7 @@
         const p = PRESETS[currentPresetIndex];
         return `x = (R-r)cosθ + d·cos((R-r)θ/r), R=${p.R}, r=${p.r}, d=${p.d}`;
       },
-      // explanationUrl: "explanations/spirograph.html",
+      explanationUrl: "/tools/math-wonder-box/spirograph.html",
     },
   };
 })(window);

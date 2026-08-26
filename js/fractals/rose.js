@@ -517,7 +517,7 @@
       randomize,
       reset,
       get formula() { return PRESETS[currentPresetIndex].formula; },
-      // explanationUrl: "explanations/rose.html",
+      explanationUrl: "/tools/math-wonder-box/rose.html",
     },
   };
 })(window);

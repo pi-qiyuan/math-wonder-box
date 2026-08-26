@@ -1,12 +1,12 @@
 (function registerLissajousCurve(global) {
   const PRESETS = [
-    { id: "unity",     nameKey: "lissajous_preset_unity",     a: 1, b: 1, delta: Math.PI / 2, drift: true, driftSpeed: 0.1  },
-    { id: "infinity",  nameKey: "lissajous_preset_infinity",  a: 1, b: 2, delta: Math.PI / 2, drift: true, driftSpeed: 0.15 },
-    { id: "classic",   nameKey: "lissajous_preset_classic",   a: 3, b: 2, delta: Math.PI / 2, drift: true, driftSpeed: 0.15 },
-    { id: "lattice",   nameKey: "lissajous_preset_lattice",   a: 3, b: 4, delta: 0,           drift: true, driftSpeed: 0.12 },
-    { id: "chaos",     nameKey: "lissajous_preset_chaos",     a: 5, b: 4, delta: 0,           drift: true, driftSpeed: 0.2  },
-    { id: "geometric", nameKey: "lissajous_preset_geometric", a: 3, b: 5, delta: Math.PI / 2, drift: true, driftSpeed: 0.1  },
-    { id: "weave",     nameKey: "lissajous_preset_weave",     a: 5, b: 6, delta: Math.PI / 4, drift: true, driftSpeed: 0.18 }
+    { id: "unity",     nameKey: "lissajous_preset_unity",     a: 1, b: 1, delta: Math.PI / 2, drift: true, driftSpeed: 0.1,  ampX: 1, ampY: 1 },
+    { id: "infinity",  nameKey: "lissajous_preset_infinity",  a: 1, b: 2, delta: Math.PI / 2, drift: true, driftSpeed: 0.15, ampX: 1, ampY: 1 },
+    { id: "classic",   nameKey: "lissajous_preset_classic",   a: 3, b: 2, delta: Math.PI / 2, drift: true, driftSpeed: 0.15, ampX: 1, ampY: 1 },
+    { id: "lattice",   nameKey: "lissajous_preset_lattice",   a: 3, b: 4, delta: 0,           drift: true, driftSpeed: 0.12, ampX: 1, ampY: 1 },
+    { id: "chaos",     nameKey: "lissajous_preset_chaos",     a: 5, b: 4, delta: 0,           drift: true, driftSpeed: 0.2,  ampX: 1, ampY: 1 },
+    { id: "geometric", nameKey: "lissajous_preset_geometric", a: 3, b: 5, delta: Math.PI / 2, drift: true, driftSpeed: 0.1,  ampX: 1, ampY: 1 },
+    { id: "weave",     nameKey: "lissajous_preset_weave",     a: 5, b: 6, delta: Math.PI / 4, drift: true, driftSpeed: 0.18, ampX: 1, ampY: 1 }
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
@@ -52,7 +52,9 @@
 
     const centerX = width / 2 - (view.centerX * width / view.scale);
     const centerY = height / 2 - (view.centerY * height / view.scale);
-    const size = (Math.min(width, height) * 0.4) / (view.scale / 1.5);
+    const baseSize = (Math.min(width, height) * 0.4) / (view.scale / 1.5);
+    const sizeX = baseSize * (preset.ampX ?? 1);
+    const sizeY = baseSize * (preset.ampY ?? 1);
 
     let a = preset.a;
     let b = preset.b;
@@ -71,8 +73,8 @@
     // Draw the curve for a full cycle
     const quality = 400; 
     for (let t = 0; t <= Math.PI * 2; t += (Math.PI * 2) / quality) {
-      const x = size * Math.sin(a * t + delta);
-      const y = size * Math.sin(b * t);
+      const x = sizeX * Math.sin(a * t + delta);
+      const y = sizeY * Math.sin(b * t);
       
       const px = x + centerX;
       const py = y + centerY;
@@ -100,7 +102,9 @@
       const preset = PRESETS[currentPresetIndex];
       const centerX = width / 2 - (view.centerX * width / view.scale);
       const centerY = height / 2 - (view.centerY * height / view.scale);
-      const size = (Math.min(width, height) * 0.4) / (view.scale / 2.5);
+      const baseSize = (Math.min(width, height) * 0.4) / (view.scale / 2.5);
+      const sizeX = baseSize * (preset.ampX ?? 1);
+      const sizeY = baseSize * (preset.ampY ?? 1);
 
       ctx.beginPath();
       ctx.lineWidth = 2;
@@ -108,8 +112,8 @@
       
       const quality = 100;
       for (let t = 0; t <= Math.PI * 2; t += (Math.PI * 2) / quality) {
-        const x = size * Math.sin(preset.a * t + preset.delta);
-        const y = size * Math.sin(preset.b * t);
+        const x = sizeX * Math.sin(preset.a * t + preset.delta);
+        const y = sizeY * Math.sin(preset.b * t);
         const px = x + centerX;
         const py = y + centerY;
         if (t === 0) ctx.moveTo(px, py);
@@ -134,7 +138,7 @@
       randomize,
       reset,
       formula: "x = A·sin(at + δ), y = B·sin(bt)",
-      // explanationUrl: "explanations/lissajous.html",
+      explanationUrl: "/tools/math-wonder-box/lissajous.html",
     },
   };
 })(window);

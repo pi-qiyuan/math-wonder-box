@@ -249,7 +249,7 @@
       reset,
       get currentNameKey() { return activePreset.nameKey; },
       formula: "dx/dt = σ(y-x), dy/dt = x(ρ-z)-y, dz/dt = xy-βz",
-      // explanationUrl: "explanations/lorenz.html",
+      explanationUrl: "/tools/math-wonder-box/lorenz.html",
     },
   };
 })(window);
