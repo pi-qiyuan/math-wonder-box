@@ -5,10 +5,10 @@
     { id: "wind",       nameKey: "noise_preset_wind",       particleCount: 1500, noiseScale: 0.003,   speed: 3.5, fade: 0.06, hueSpeed: 0.5, baseHue: 180, hueRange: 40,  saturation: 70, lineWidth: 0.8, opacity: 0.4 },
     { id: "vortex",     nameKey: "noise_preset_vortex",     particleCount: 3000, noiseScale: 0.002,   speed: 2.0, fade: 0.01, hueSpeed: 0.05,baseHue: 210, hueRange: 30,  saturation: 80, lineWidth: 1.5, opacity: 0.25 },
     { id: "silk",       nameKey: "noise_preset_silk",       particleCount: 1200, noiseScale: 0.001,   speed: 0.8, fade: 0.02, hueSpeed: 0.1, baseHue: 30,  hueRange: 30,  saturation: 20, lineWidth: 0.5, opacity: 0.5 },
-    { id: "galaxy",     nameKey: "noise_preset_galaxy",     particleCount: 2500, noiseScale: 0.00025, speed: 1.5, fade: 0.04, hueSpeed: 0.3, baseHue: 0,   hueRange: 360, saturation: 60, lineWidth: 1.2, opacity: 0.4 },
+    { id: "galaxy",     nameKey: "noise_preset_galaxy",     particleCount: 2500, noiseScale: 0.0015,  speed: 1.5, fade: 0.04, hueSpeed: 0.3, baseHue: 0,   hueRange: 360, saturation: 60, lineWidth: 1.2, opacity: 0.4 },
     { id: "circuit",    nameKey: "noise_preset_circuit",    particleCount: 1200, noiseScale: 0.012,   speed: 2.0, fade: 0.05, hueSpeed: 0.0, baseHue: 100, hueRange: 40,  saturation: 90, lineWidth: 1.8, opacity: 0.7 },
     { id: "turbulence", nameKey: "noise_preset_turbulence", particleCount: 2000, noiseScale: 0.005,   speed: 4.0, fade: 0.1,  hueSpeed: 1.5, baseHue: 0,   hueRange: 50,  saturation: 85, lineWidth: 1.0, opacity: 0.6 },
-     { id: "aurora",    nameKey: "noise_preset_aurora",     particleCount: 1800, noiseScale: 0.0005,  speed: 2.5, fade: 0.02, hueSpeed: 0.3, baseHue: 130, hueRange: 60,  saturation: 65, lineWidth: 2.2, opacity: 0.3 }
+    { id: "aurora",     nameKey: "noise_preset_aurora",     particleCount: 1800, noiseScale: 0.0005,  speed: 2.5, fade: 0.02, hueSpeed: 0.3, baseHue: 130, hueRange: 60,  saturation: 65, lineWidth: 2.2, opacity: 0.3 }
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
