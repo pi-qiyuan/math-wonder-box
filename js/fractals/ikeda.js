@@ -1,17 +1,17 @@
 (function registerIkedaAttractor(global) {
   const PRESETS = [
-    { u: 0.9,   c1: 0.4,  c2: 6.0, nameKey: "ikeda_preset_whirlpool"  },
-    { u: 0.82,  c1: 0.4,  c2: 6.0, nameKey: "ikeda_preset_spiral"     },
-    { u: 0.87,  c1: 0.4,  c2: 6.0, nameKey: "ikeda_preset_tempest"    },
-    { u: 0.7,   c1: 0.4,  c2: 6.0, nameKey: "ikeda_preset_lantern"    },
-    { u: 0.998, c1: 0.4,  c2: 6.0, nameKey: "ikeda_preset_maelstrom"  },
-    { u: 0.68,  c1: 0.4,  c2: 6.0, nameKey: "ikeda_preset_pinwheel"   },
-    { u: 0.84,  c1: 0.42, c2: 6.0, nameKey: "ikeda_preset_beacon"     },
-    { u: 0.8,   c1: 0.4,  c2: 5.5, nameKey: "ikeda_preset_shell"      },
-    { u: 0.9,   c1: 0.38, c2: 6.5, nameKey: "ikeda_preset_riptide"    },
-    { u: 0.75,  c1: 0.4,  c2: 6.0, nameKey: "ikeda_preset_lotus"      },
-    { u: 0.86,  c1: 0.4,  c2: 6.2, nameKey: "ikeda_preset_typhoon"    },
-    { u: 0.71,  c1: 0.4,  c2: 6.0, nameKey: "ikeda_preset_gyre"       }
+    { u: 0.9,    c1: 0.4,    c2: 6.0,    nameKey: "ikeda_preset_whirlpool" },
+    { u: 0.82,   c1: 0.4,    c2: 6.0,    nameKey: "ikeda_preset_spiral"    },
+    { u: 0.87,   c1: 0.4,    c2: 6.0,    nameKey: "ikeda_preset_tempest"   },
+    { u: 0.7,    c1: 0.4,    c2: 6.0,    nameKey: "ikeda_preset_lantern"   },
+    { u: 0.9454, c1: 0.3009, c2: 7.2689, nameKey: "ikeda_preset_maelstrom" },
+    { u: 0.68,   c1: 0.4,    c2: 6.0,    nameKey: "ikeda_preset_pinwheel"  },
+    { u: 0.84,   c1: 0.42,   c2: 6.0,    nameKey: "ikeda_preset_beacon"    },
+    { u: 0.8,    c1: 0.4,    c2: 5.5,    nameKey: "ikeda_preset_shell"     },
+    { u: 0.9,    c1: 0.38,   c2: 6.5,    nameKey: "ikeda_preset_riptide"   },
+    { u: 0.75,   c1: 0.4,    c2: 6.0,    nameKey: "ikeda_preset_lotus"     },
+    { u: 0.86,   c1: 0.4,    c2: 6.2,    nameKey: "ikeda_preset_typhoon"   },
+    { u: 0.71,   c1: 0.4,    c2: 6.0,    nameKey: "ikeda_preset_gyre"      }
   ];
 
   const presetRandomizer = new TaboowRandomizer(PRESETS.length, 3);
@@ -231,7 +231,7 @@
       randomize,
       reset,
       formula: "tₙ = c₁ - c₂/(1 + xₙ² + yₙ²), xₙ₊₁ = 1 + u(xₙcos tₙ - yₙsin tₙ), yₙ₊₁ = u(xₙsin tₙ + yₙcos tₙ)",
-      //explanationUrl: "explanations/ikeda.html",
+      explanationUrl: "/tools/math-wonder-box/ikeda.html",
     },
   };
 })(window);
