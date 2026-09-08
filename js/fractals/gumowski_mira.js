@@ -333,7 +333,7 @@
       randomize,
       reset,
       formula: "xₙ₊₁ = yₙ + α(1 - σyₙ²)yₙ + f(xₙ), yₙ₊₁ = -xₙ + f(xₙ₊₁)",
-      //explanationUrl: "explanations/gumowski_mira.html",
+      explanationUrl: "/tools/math-wonder-box/gumowski-mira.html",
     },
   };
 })(window);

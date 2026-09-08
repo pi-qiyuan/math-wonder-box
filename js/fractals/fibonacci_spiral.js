@@ -221,7 +221,7 @@
       randomize,
       reset,
       formula: "Fₙ = Fₙ₋₁ + Fₙ₋₂",
-      // explanationUrl: "explanations/fibonacci.html",
+      explanationUrl: "/tools/math-wonder-box/fibonacci-spiral.html",
     },
   };
 })(window);

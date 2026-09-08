@@ -232,8 +232,8 @@
       get formula() { 
         return PRESETS[currentPresetIndex].formula;
       },
-      explanationUrl: "explanations/dragon_curve.html",
       */
+      explanationUrl: "/tools/math-wonder-box/dragon-curve.html",
     },
   };
 })(window);

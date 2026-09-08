@@ -12,11 +12,11 @@ const FRACTALS = [
   { id: "Clifford",           labelKey: "clifford_canvas_aria",        eyebrowKey: "clifford_eyebrow",        titleKey: "clifford_title",        invertY: false }, //
   { id: "DeJong",             labelKey: "de_jong_canvas_aria",         eyebrowKey: "de_jong_eyebrow",         titleKey: "de_jong_title",         invertY: false }, //
   { id: "DoublePendulum",     labelKey: "double_pendulum_canvas_aria", eyebrowKey: "double_pendulum_eyebrow", titleKey: "double_pendulum_title", invertY: false },
-  { id: "DragonCurve",        labelKey: "dragon_canvas_aria",          eyebrowKey: "dragon_eyebrow",          titleKey: "dragon_title",          invertY: false },
+  { id: "DragonCurve",        labelKey: "dragon_canvas_aria",          eyebrowKey: "dragon_eyebrow",          titleKey: "dragon_title",          invertY: false }, //
   { id: "Epicycloid",         labelKey: "epicycloid_canvas_aria",      eyebrowKey: "epicycloid_eyebrow",      titleKey: "epicycloid_title",      invertY: false }, //
-  { id: "Fibonacci",          labelKey: "fibonacci_canvas_aria",       eyebrowKey: "fibonacci_eyebrow",       titleKey: "fibonacci_title",       invertY: false },
+  { id: "Fibonacci",          labelKey: "fibonacci_canvas_aria",       eyebrowKey: "fibonacci_eyebrow",       titleKey: "fibonacci_title",       invertY: false }, //
   { id: "FibonacciTree",      labelKey: "fibonacci_tree_canvas_aria",  eyebrowKey: "fibonacci_tree_eyebrow",  titleKey: "fibonacci_tree_title",  invertY: false }, //
-  { id: "GumowskiMira",       labelKey: "gumowski_mira_canvas_aria",   eyebrowKey: "gumowski_mira_eyebrow",   titleKey: "gumowski_mira_title",   invertY: false },
+  { id: "GumowskiMira",       labelKey: "gumowski_mira_canvas_aria",   eyebrowKey: "gumowski_mira_eyebrow",   titleKey: "gumowski_mira_title",   invertY: false }, //
   { id: "HilbertCurve",       labelKey: "hilbert_canvas_aria",         eyebrowKey: "hilbert_eyebrow",         titleKey: "hilbert_title",         invertY: false },
   { id: "Hopalong",           labelKey: "hopalong_canvas_aria",        eyebrowKey: "hopalong_eyebrow",        titleKey: "hopalong_title",        invertY: false }, ///////////////
   { id: "Ikeda",              labelKey: "ikeda_canvas_aria",           eyebrowKey: "ikeda_eyebrow",           titleKey: "ikeda_title",           invertY: false }, //

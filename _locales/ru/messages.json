@@ -36,7 +36,7 @@
   "footer_buy_coffee": { "message": "Угостить кофе" },
   "footer_contact_us": { "message": "Связаться с нами" },
   "footer_privacy_policy": { "message": "Политика конфиденциальности" },
-  
+
   "aizawa_canvas_aria": { "message": "Аттрактор Аидзавы" },
   "aizawa_eyebrow": { "message": "Аттрактор со сферической сингулярностью" },
   "aizawa_title": { "message": "Аттрактор Аидзавы" },
@@ -44,7 +44,7 @@
   "aizawa_preset_sphere": { "message": "Плотная сфера" },
   "aizawa_preset_heart": { "message": "Хаотичное сердце" },
   "aizawa_preset_top": { "message": "Орбита (вид сверху)" },
-  
+
   "apollonian_canvas_aria": { "message": "Аполлониева сеть" },
   "apollonian_eyebrow": { "message": "Теорема Декарта о касающихся окружностях" },
   "apollonian_title": { "message": "Аполлониева сеть" },
@@ -60,7 +60,7 @@
   "apollonian_preset_contrast": { "message": "Высокий контраст" },
   "apollonian_preset_tight": { "message": "Плотная упаковка" },
   "apollonian_preset_fine": { "message": "Мелкая текстура" },
-  
+
   "barnsley_canvas_aria": { "message": "Папоротник Барнсли" },
   "barnsley_eyebrow": { "message": "Система итерируемых функций" },
   "barnsley_title": { "message": "Папоротник Барнсли" },
@@ -72,7 +72,7 @@
   "barnsley_preset_slender": { "message": "Тонкий" },
   "barnsley_preset_spiral": { "message": "Спиральный" },
   "barnsley_preset_maple": { "message": "Кленовый лист" },
-  
+
   "bifurcation_canvas_aria": { "message": "Диаграмма бифуркаций" },
   "bifurcation_eyebrow": { "message": "Теория хаоса и логистические отображения" },
   "bifurcation_title": { "message": "Диаграмма бифуркаций" },
@@ -87,7 +87,7 @@
   "bifurcation_preset_gauss_pool": { "message": "Гауссово поле" },
   "bifurcation_preset_cubic_split": { "message": "Кубическая бифуркация" },
   "bifurcation_preset_henon_shadow": { "message": "Кубическое расщепление" },
-  
+
   "chladni_canvas_aria": { "message": "Фигуры Хладни" },
   "chladni_eyebrow": { "message": "Узоры акустического резонанса" },
   "chladni_title": { "message": "Фигуры Хладни" },
@@ -96,7 +96,7 @@
   "chladni_preset_resonance": { "message": "Сложный резонанс" },
   "chladni_preset_star": { "message": "Звездообразная вибрация" },
   "chladni_preset_deep_sea": { "message": "Глубоководная текстура" },
-  
+
   "clifford_canvas_aria": { "message": "Аттрактор Клиффорда" },
   "clifford_eyebrow": { "message": "Динамический аттрактор Клиффорда" },
   "clifford_title": { "message": "Аттрактор Клиффорда" },
@@ -118,7 +118,7 @@
   "clifford_preset_wings": { "message": "Двойные крылья" },
   "clifford_preset_branch": { "message": "Ветвящийся путь" },
   "clifford_preset_cross": { "message": "Симметричный крест" },
-  
+
   "de_jong_canvas_aria": { "message": "Аттрактор Де Йонга" },
   "de_jong_eyebrow": { "message": "Динамический аттрактор Де Йонга" },
   "de_jong_title": { "message": "Аттрактор Де Йонга" },
@@ -134,7 +134,7 @@
   "de_jong_preset_kaleidscope": { "message": "Тени калейдоскопа" },
   "de_jong_preset_stardust": { "message": "Орбита звездной пыли" },
   "de_jong_preset_feather": { "message": "Переплетенные перья" },
-  
+
   "double_pendulum_canvas_aria": { "message": "Траектории двойного маятника" },
   "double_pendulum_eyebrow": { "message": "Хаос и гамильтонова механика" },
   "double_pendulum_title": { "message": "Траектории двойного маятника" },
@@ -144,7 +144,7 @@
   "double_pendulum_preset_unbalanced": { "message": "Асимметричные массы" },
   "double_pendulum_preset_extended": { "message": "Удлиненные плечи" },
   "double_pendulum_preset_chaos_high": { "message": "Высокоэнергетическое состояние" },
-  
+
   "dragon_canvas_aria": { "message": "Фрактал «Дракон»" },
   "dragon_eyebrow": { "message": "Самоподобное фрактальное складывание" },
   "dragon_title": { "message": "Фрактал «Дракон»" },
@@ -154,7 +154,7 @@
   "dragon_preset_rainbow_tail": { "message": "Радужный фрактальный дракон" },
   "dragon_preset_violet_phantom": { "message": "Фиолетовый фантом" },
   "dragon_preset_fire_serpent": { "message": "Огненный змей" },
-  
+
   "epicycloid_canvas_aria": { "message": "Эпициклоида / Калейдоскоп" },
   "epicycloid_eyebrow": { "message": "Спирограф и эпициклоида" },
   "epicycloid_title": { "message": "Эпициклоида" },
@@ -166,7 +166,7 @@
   "epicycloid_preset_hypnotic_ring": { "message": "Гипнотическое кольцо" },
   "epicycloid_preset_dahlia": { "message": "Георгин" },
   "epicycloid_preset_galaxy": { "message": "Спиральная галактика" },
-  
+
   "fibonacci_canvas_aria": { "message": "Золотая спираль Фибоначчи" },
   "fibonacci_eyebrow": { "message": "Природные пропорции" },
   "fibonacci_title": { "message": "Раковина со спиралью Фибоначчи" },
@@ -174,7 +174,7 @@
   "fibonacci_preset_classic": { "message": "Классическая золотая спираль" },
   "fibonacci_preset_rainbow": { "message": "Радужные квадраты" },
   "fibonacci_preset_depth": { "message": "Монохромная глубина" },
-  
+
   "fibonacci_tree_canvas_aria": { "message": "Дерево Фибоначчи" },
   "fibonacci_tree_eyebrow": { "message": "Рекурсивный рост" },
   "fibonacci_tree_title": { "message": "Дерево Фибоначчи" },
@@ -190,7 +190,7 @@
   "fibonacci_tree_preset_ocean": { "message": "Капля в океане" },
   "fibonacci_tree_preset_emerald": { "message": "Изумрудный лес" },
   "fibonacci_tree_preset_frost": { "message": "Ледяной кристаллический цветок" },
-  
+
   "gumowski_mira_canvas_aria": { "message": "Аттрактор Гумовского-Мира" },
   "gumowski_mira_eyebrow": { "message": "Динамический аттрактор Гумовского-Мира" },
   "gumowski_mira_title": { "message": "Аттрактор Гумовского-Мира" },
@@ -206,7 +206,7 @@
   "gumowski_mira_preset_glider": { "message": "Квантовый глайдер" },
   "gumowski_mira_preset_orbit": { "message": "Орбитальный резонанс" },
   "gumowski_mira_preset_solar": { "message": "Солнечная вспышка" },
-  
+
   "hilbert_canvas_aria": { "message": "Кривая Гильберта" },
   "hilbert_eyebrow": { "message": "Рекурсивная кривая, заполняющая пространство" },
   "hilbert_title": { "message": "Кривая Гильберта" },
@@ -216,7 +216,7 @@
   "hilbert_preset_neon_grid": { "message": "Кибер-сетка" },
   "hilbert_preset_violet_web": { "message": "Фиолетовая паутина" },
   "hilbert_preset_fire_flow": { "message": "Огненный поток" },
-  
+
   "hopalong_canvas_aria": { "message": "Аттрактор Хопалонга" },
   "hopalong_eyebrow": { "message": "Хопалонг Барри Мартина" },
   "hopalong_title": { "message": "Аттрактор Хопалонга" },
@@ -228,7 +228,7 @@
   "hopalong_preset_nebula": { "message": "Эфирная туманность" },
   "hopalong_preset_vortex": { "message": "Пространственный вихрь" },
   "hopalong_preset_crystal": { "message": "Кристаллическая структура" },
-  
+
   "ikeda_canvas_aria": { "message": "Аттрактор Икеды" },
   "ikeda_eyebrow": { "message": "Динамический аттрактор Икеды" },
   "ikeda_title": { "message": "Аттрактор Икеды" },
@@ -244,7 +244,7 @@
   "ikeda_preset_lotus": { "message": "Цветущий лотос" },
   "ikeda_preset_typhoon": { "message": "Глаз тайфуна" },
   "ikeda_preset_gyre": { "message": "Циркулирующий вихрь" },
-  
+
   "julia_canvas_aria": { "message": "Множество Жюлиа" },
   "julia_eyebrow": { "message": "Взгляд изнутри на множество Мандельброта" },
   "julia_title": { "message": "Множество Жюлиа" },
@@ -256,7 +256,7 @@
   "julia_preset_siegel": { "message": "Диск Зигеля" },
   "julia_preset_cauliflower": { "message": "Цветная капуста" },
   "julia_preset_clouds": { "message": "Вихри облаков" },
-  
+
   "koch_canvas_aria": { "message": "Снежинка Коха" },
   "koch_eyebrow": { "message": "Рекурсивная геометрия" },
   "koch_title": { "message": "Снежинка Коха" },
@@ -264,7 +264,7 @@
   "koch_preset_neon": { "message": "Неоновый пульс" },
   "koch_preset_golden": { "message": "Золотая чешуя" },
   "koch_preset_rainbow": { "message": "Радужный фрактал" },
-  
+
   "langtons_ant_canvas_aria": { "message": "Муравей Лэнгтона" },
   "langtons_ant_eyebrow": { "message": "Клеточный автомат" },
   "langtons_ant_title": { "message": "Муравей Лэнгтона" },
@@ -273,7 +273,7 @@
   "langtons_ant_preset_star": { "message": "Октаграмма" },
   "langtons_ant_preset_diamond": { "message": "Растущий ромб" },
   "langtons_ant_preset_multi": { "message": "Разноцветный путь" },
-  
+
   "levy_canvas_aria": { "message": "C-кривая Леви" },
   "levy_eyebrow": { "message": "Рекурсивно складываемый фрактал" },
   "levy_title": { "message": "C-кривая Леви" },
@@ -286,7 +286,7 @@
   "levy_preset_crimson_flow": { "message": "Багровый поток" },
   "levy_preset_twisted_dragon": { "message": "Скрученный дракон" },
   "levy_preset_kaleidoscope_bloom": { "message": "Калейдоскопическое цветение" },
-  
+
   "lissajous_canvas_aria": { "message": "Фигура Лиссажу" },
   "lissajous_eyebrow": { "message": "Гармонические колебания" },
   "lissajous_title": { "message": "Фигура Лиссажу" },
@@ -297,7 +297,7 @@
   "lissajous_preset_infinity": { "message": "Бесконечная петля" },
   "lissajous_preset_lattice": { "message": "Гармоническая решетка" },
   "lissajous_preset_weave": { "message": "Звездное плетение" },
-  
+
   "lorenz_canvas_aria": { "message": "Аттрактор Лоренца" },
   "lorenz_eyebrow": { "message": "Эффект бабочки" },
   "lorenz_title": { "message": "Аттрактор Лоренца" },
@@ -307,11 +307,11 @@
   "lorenz_preset_ribbon": { "message": "Кельтская лента" },
   "lorenz_preset_storm": { "message": "Мощный шторм" },
   "lorenz_preset_galaxy": { "message": "Двойная звездная система" },
-  
+
   "mandelbrot_canvas_aria": { "message": "Множество Мандельброта" },
   "mandelbrot_eyebrow": { "message": "Простое множество Мандельброта" },
   "mandelbrot_title": { "message": "Мандельброт" },
-  
+
   "newton_canvas_aria": { "message": "Фрактал Ньютона" },
   "newton_eyebrow": { "message": "Итерация поиска корней" },
   "newton_title": { "message": "Фрактал Ньютона" },
@@ -323,7 +323,7 @@
   "newton_preset_generalized": { "message": "Обобщенная асимметрия" },
   "newton_preset_transcendental": { "message": "Синусоиды" },
   "newton_preset_inverted": { "message": "Инвертированная глубина" },
-  
+
   "noise_title": { "message": "Поле потока шума" },
   "noise_eyebrow": { "message": "Генеративное искусство" },
   "noise_canvas_aria": { "message": "Поле потока шума" },
@@ -335,7 +335,7 @@
   "noise_preset_circuit": { "message": "Цифровая схема" },
   "noise_preset_turbulence": { "message": "Хаотичная турбулентность" },
   "noise_preset_aurora": { "message": "Полярное сияние" },
-  
+
   "penrose_canvas_aria": { "message": "Penrose Paving" },
   "penrose_eyebrow": { "message": "Апериодическая мозаика" },
   "penrose_title": { "message": "Penrose Paving" },
@@ -350,7 +350,7 @@
   "penrose_preset_spin": { "message": "Бесконечный вихрь" },
   "penrose_preset_breathing": { "message": "Дыхание света и тени" },
   "penrose_preset_kaleidscope": { "message": "Все виды цветов" },
-  
+
   "phyllotaxis_canvas_aria": { "message": "Филлотаксис Фибоначчи" },
   "phyllotaxis_eyebrow": { "message": "Математическая ботаника" },
   "phyllotaxis_title": { "message": "Филлотаксис Фибоначчи" },
@@ -363,7 +363,7 @@
   "phyllotaxis_preset_binary": { "message": "Двойные спирали" },
   "phyllotaxis_preset_ripple": { "message": "Муаровая рябь" },
   "phyllotaxis_preset_cloud": { "message": "Квантовое облако" },
-  
+
   "pythagoras_canvas_aria": { "message": "Дерево Пифагора" },
   "pythagoras_eyebrow": { "message": "Рекурсивная геометрия" },
   "pythagoras_title": { "message": "Дерево Пифагора" },
@@ -374,7 +374,7 @@
   "pythagoras_preset_sakura": { "message": "Танцующая сакура" },
   "pythagoras_preset_ocean": { "message": "Глубины океана" },
   "pythagoras_preset_fire": { "message": "Пылающий огонь" },
-  
+
   "rd_canvas_aria": { "message": "Система «реакция-диффузия»" },
   "rd_eyebrow": { "message": "Формирование узора" },
   "rd_title": { "message": "Система «реакция-диффузия»" },
@@ -383,7 +383,7 @@
   "rd_preset_worms": { "message": "Текстура: Черви" },
   "rd_preset_spots": { "message": "Форма: Пятна" },
   "rd_preset_unstable": { "message": "Хаос: Нестабильность" },
-  
+
   "rose_canvas_aria": { "message": "Кривая розы/Муаровая роза" },
   "rose_eyebrow": { "message": "Синус полярных координат и роза Мора" },
   "rose_title": { "message": "Кривая розы" },
@@ -395,7 +395,7 @@
   "rose_preset_fire_dahlia": { "message": "Огненная георгина Муаровая роза" },
   "rose_preset_interlaced_bloom": { "message": "Переплетающиеся линии цветущей розы" },
   "rose_preset_lace_flower": { "message": "кружевная цветочная роза" },
-  
+
   "sierpinski_canvas_aria": { "message": "Ковёр Серпинского" },
   "sierpinski_eyebrow": { "message": "Рекурсивное деление квадрата" },
   "sierpinski_title": { "message": "Ковёр Серпинского" },
@@ -405,7 +405,7 @@
   "sierpinski_preset_nebula_grid": { "message": "Туманная сетка" },
   "sierpinski_preset_fire_matrix": { "message": "Огненная матрица" },
   "sierpinski_preset_violet_lattice": { "message": "Фиолетовая решетка" },
-  
+
   "sierpinski_tri_canvas_aria": { "message": "Треугольник Серпинского" },
   "sierpinski_tri_eyebrow": { "message": "Рекурсивное разбиение треугольника" },
   "sierpinski_tri_title": { "message": "Треугольник Серпинского" },
@@ -415,7 +415,7 @@
   "sierpinski_tri_preset_nebula": { "message": "Космический фрактал" },
   "sierpinski_tri_preset_fire": { "message": "Пылающая вершина" },
   "sierpinski_tri_preset_violet": { "message": "Фиолетовая призма" },
-  
+
   "spirograph_canvas_aria": { "message": "Спирограф (гипотрохоида)" },
   "spirograph_eyebrow": { "message": "Геометрический спирограф" },
   "spirograph_title": { "message": "Спирограф" },
@@ -427,7 +427,7 @@
   "spirograph_preset_emerald_lace": { "message": "Изумрудное кружево" },
   "spirograph_preset_fire_blossom": { "message": "Огненный цветок" },
   "spirograph_preset_violet_vortex": { "message": "Фиолетовый вихрь" },
-  
+
   "voronoi_canvas_aria": { "message": "Диаграмма Вороного" },
   "voronoi_eyebrow": { "message": "Пространственное разбиение" },
   "voronoi_title": { "message": "Диаграмма Вороного" },
